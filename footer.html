@@ -135,6 +135,26 @@
     gap: 8px;
   }
 
+  .hsn-location-pill {
+    background: rgba(201, 164, 106, 0.1);
+    border: 1px solid rgba(201, 164, 106, 0.3);
+    color: var(--color-secondary, #C9A46A) !important;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 50rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    display: inline-block;
+  }
+
+  .hsn-location-pill:hover {
+    background: var(--color-secondary, #C9A46A);
+    color: #0F172A !important;
+    border-color: var(--color-secondary, #C9A46A);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(201, 164, 106, 0.25);
+  }
+
   .hsn-footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 12.5px;
@@ -159,35 +179,62 @@
     gap: 12px;
     text-decoration: none;
     margin-bottom: 14px;
+    white-space: nowrap;
+    max-width: 100%;
   }
 
   .hsn-footer-logo-wrap {
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
     flex-shrink: 0;
   }
 
   .hsn-footer-logo-top {
     font-family: var(--font-sans, "Outfit", sans-serif);
-    font-size: 16px;
-    letter-spacing: 0.05em;
+    font-size: 14.5px;
+    letter-spacing: 0.03em;
     color: #FFFFFF;
     line-height: 1.2;
     font-weight: 700;
     text-transform: uppercase;
+    white-space: nowrap !important;
     display: block;
   }
 
   .hsn-footer-logo-bottom {
     font-family: var(--font-sans, "Outfit", sans-serif);
-    font-size: 10px;
-    letter-spacing: 0.15em;
+    font-size: 8.5px;
+    letter-spacing: 0.1em;
     color: var(--color-secondary, #C9A46A);
     text-transform: uppercase;
     line-height: 1.2;
     font-weight: 600;
     margin-top: 2px;
+    white-space: nowrap !important;
     display: block;
+  }
+
+  @media (min-width: 992px) and (max-width: 1280px) {
+    .hsn-footer-brand {
+      gap: 8px;
+    }
+
+    .hsn-footer-logo-wrap {
+      width: 40px;
+      height: 40px;
+    }
+
+    .hsn-footer-logo-top {
+      font-size: 13px !important;
+      letter-spacing: 0.02em !important;
+      white-space: nowrap !important;
+    }
+
+    .hsn-footer-logo-bottom {
+      font-size: 7.5px !important;
+      letter-spacing: 0.08em !important;
+      white-space: nowrap !important;
+    }
   }
 
   @media (max-width: 767.98px) {
@@ -197,17 +244,19 @@
     }
 
     .hsn-footer-logo-wrap {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
     }
 
     .hsn-footer-logo-top {
-      font-size: 14.5px;
+      font-size: 13.5px !important;
+      white-space: nowrap !important;
     }
 
     .hsn-footer-logo-bottom {
-      font-size: 9px;
-      letter-spacing: 0.12em;
+      font-size: 8px !important;
+      letter-spacing: 0.08em !important;
+      white-space: nowrap !important;
     }
 
     .hsn-footer-heading {
@@ -320,14 +369,10 @@
           <h6 class="hsn-footer-subheading mb-2">Our Locations</h6>
 
           <div class="d-flex flex-wrap gap-2 mb-3 mt-3">
-            <a href="contact.html#locations" class="badge rounded-pill text-decoration-none"
-              style="background: rgba(201,164,106,0.1); border: 1px solid rgba(201,164,106,0.3); color: var(--color-secondary); font-size: 11px; padding: 5px 10px;">Bangalore</a>
-            <a href="contact.html#locations" class="badge rounded-pill text-decoration-none"
-              style="background: rgba(201,164,106,0.1); border: 1px solid rgba(201,164,106,0.3); color: var(--color-secondary); font-size: 11px; padding: 5px 10px;">Coimbatore</a>
-            <a href="contact.html#locations" class="badge rounded-pill text-decoration-none"
-              style="background: rgba(201,164,106,0.1); border: 1px solid rgba(201,164,106,0.3); color: var(--color-secondary); font-size: 11px; padding: 5px 10px;">Chennai</a>
-            <a href="contact.html#locations" class="badge rounded-pill text-decoration-none"
-              style="background: rgba(201,164,106,0.1); border: 1px solid rgba(201,164,106,0.3); color: var(--color-secondary); font-size: 11px; padding: 5px 10px;">Hyderabad</a>
+            <a href="contact.html#bangalore" class="hsn-location-pill">Bangalore</a>
+            <a href="contact.html#coimbatore" class="hsn-location-pill">Coimbatore</a>
+            <a href="contact.html#chennai" class="hsn-location-pill">Chennai</a>
+            <a href="contact.html#hyderabad" class="hsn-location-pill">Hyderabad</a>
           </div>
           <a href="contact.html#locations" class="hsn-footer-locations-link">
             View All Locations &rarr;

@@ -111,6 +111,20 @@
 
     // 7. Dispatch custom event for any page-specific scripts to hook into
     document.dispatchEvent(new CustomEvent('components-loaded'));
+
+    // 8. If URL contains a hash, ensure smooth scroll after DOM is populated
+    if (window.location.hash) {
+      try {
+        var hashTarget = document.querySelector(window.location.hash);
+        if (hashTarget) {
+          setTimeout(function () {
+            hashTarget.scrollIntoView({ behavior: 'smooth' });
+          }, 150);
+        }
+      } catch (e) {
+        // invalid selector ignore
+      }
+    }
   }).catch(function (error) {
     console.error('Component loading error:', error);
   });
