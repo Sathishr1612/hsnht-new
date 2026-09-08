@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Dermatology and skin care treatments including Laser Hair Reduction, Hydrafacial, PRP Facial, GFC, Microneedling, Exosomes, Derma Roller, Chemical Peels, Oxygen Facials and Wart Removal at HSN Super Speciality." />
+    <title>Dermatology & Skin Care | HSN Super Speciality | Bangalore, Chennai, Coimbatore &amp; Hyderabad</title>
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom Style sheets -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/service.css" />
+    <link rel="stylesheet" href="assets/css/hair-restoration.css" />
+    <style>
+        .hr-hero::before {
+            background-image: url('assets/images/hsn-images/high-density-eye-brow-banner.png') !important;
+            background-position: right 30% !important;
+        }
+
+        /* Mobile: use dedicated portrait image and center it */
+        @media (max-width: 768px) {
+            #hr-hero::before {
+                background-image: url('assets/images/hsn-images/high-density-eye-brow-banner.png') !important;
+                background-position: center top 80px !important;
+                -webkit-mask-image: none !important;
+                mask-image: none !important;
+            }
+        }
+
+        /* Dermatology Treatments Section */
+        .derma-treatments-section {
+            padding: 80px 0;
+            background-color: var(--color-bg-main, #F8F7F4);
+        }
+
+        .derma-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(201, 164, 106, 0.22);
+            border-radius: 16px;
+            padding: 40px 36px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .derma-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 36px;
+            right: 36px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(201, 164, 106, 0.6), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .derma-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(201, 164, 106, 0.45);
+            box-shadow: 0 16px 40px rgba(29, 29, 31, 0.06);
+        }
+
+        .derma-card:hover::before {
+            opacity: 1;
+        }
+
+        .derma-card-top {
+            margin-bottom: 24px;
+        }
+
+        .derma-card .editorial-label {
+            margin-bottom: 12px;
+        }
+
+        .derma-card-title {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--color-primary, #1D1D1F);
+            line-height: 1.25;
+            margin-bottom: 14px;
+            letter-spacing: -0.01em;
+        }
+
+        .derma-card-desc {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.75;
+            color: #555555;
+            margin-bottom: 0;
+        }
+
+        .derma-card-bottom {
+            padding-top: 24px;
+            margin-top: 24px;
+            border-top: 1px solid rgba(201, 164, 106, 0.15);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .derma-treatments-section {
+                padding: 60px 0;
+            }
+
+            .derma-card {
+                padding: 32px 28px;
+            }
+
+            .derma-card-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .derma-treatments-section {
+                padding: 45px 0;
+            }
+
+            .derma-card {
+                padding: 26px 20px;
+                border-radius: 12px;
+            }
+
+            .derma-card-title {
+                font-size: 22px;
+            }
+
+            .derma-card-desc {
+                font-size: 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+
+<body class="hr-page">
+
+    <!-- Header Component (loaded dynamically) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Global Gold Grain Overlay -->
+    <div class="luxury-grain"></div>
+
+    <!-- =========================================
+         SECTION 1: HERO
+         ========================================= -->
+    <section class="hr-hero" id="hr-hero">
+        <div class="hr-hero-container">
+            <div class="hr-hero-content">
+                <span class="hr-hero-label">HSN SUPER SPECIALITY</span>
+                <h1 class="hr-hero-title">
+                    Dermatology &<br>
+                    <span class="hr-highlight">Skin Care</span>
+                </h1>
+                <div class="hr-hero-actions mt-4">
+                    <a href="#" class="hr-btn-primary" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                        Book Consultation
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </a>
+                    <a href="tel:+919035554728" class="hr-btn-outline ms-md-3">
+                        Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 2: TREATMENT SOLUTIONS (DERMATOLOGY / SKIN CARE)
+         ========================================= -->
+    <section id="treatments" class="derma-treatments-section">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- 01. LASER HAIR REDUCTION -->
+                <div class="col-lg-6 col-md-6 col-12 d-flex">
+                    <div class="derma-card w-100">
+                        <div class="derma-card-top">
+                            <span class="editorial-label">01. Dermatology / Skin Care</span>
+                            <h3 class="derma-card-title">Laser Hair Reduction</h3>
+                            <p class="derma-card-desc">Laser hair reduction treats unwanted hair at the follicular
+                                level, leading to a smooth skin with reduced hair.</p>
+                        </div>
+                        <div class="derma-card-bottom">
+                            <a href="#consultationModal" data-bs-toggle="modal" class="editorial-link">
+                                Book Consultation <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 02. HYDRAFACIAL -->
+                <div class="col-lg-6 col-md-6 col-12 d-flex">
+                    <div class="derma-card w-100">
+                        <div class="derma-card-top">
+                            <span class="editorial-label">02. Dermatology / Skin Care</span>
+                            <h3 class="derma-card-title">Hydrafacial</h3>
+                            <p class="derma-card-desc">Hydrafacial involves a cleansing, exfoliating, and hydration of
+                                the skin to bring a refreshed look to the skin.</p>
+                        </div>
+                        <div class="derma-card-bottom">
+                            <a href="#consultationModal" data-bs-toggle="modal" class="editorial-link">
+                                Book Consultation <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03. PRP FACIAL -->
+                <div class="col-lg-6 col-md-6 col-12 d-flex">
+                    <div class="derma-card w-100">
+                        <div class="derma-card-top">
+                            <span class="editorial-label">03. Dermatology / Skin Care</span>
+                            <h3 class="derma-card-title">PRP Facial</h3>
+                            <p class="derma-card-desc">PRP facial involves use of platelet-rich plasma from your blood
+                                to rejuvenate and enhance the texture of the skin.</p>
+                        </div>
+                        <div class="derma-card-bottom">
+                            <a href="#consultationModal" data-bs-toggle="modal" class="editorial-link">
+                                Book Consultation <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04. GFC -->
+                <div class="col-lg-6 col-md-6 col-12 d-flex">
+                    <div class="derma-card w-100">
+                        <div class="derma-card-top">
+                            <span class="editorial-label">04. Dermatology / Skin Care</span>
+                            <h3 class="derma-card-title">GFC</h3>
+                            <p class="derma-card-desc">GFC involves a use of growth factors to help in rejuvenating the
+                                skin and give healthy skin look.</p>
+                        </div>
+                        <div class="derma-card-bottom">
+                            <a href="#consultationModal" data-bs-toggle="modal" class="editorial-link">
+                                Book Consultation <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 05. MICRONEEDLING -->
+                <div class="col-lg-6 col-md-6 col-12 d-flex">
+                    <div class="derma-card w-100">
+                        <div class="derma-card-top">
+                            <span class="editorial-label">05. Dermatology / Skin Care</span>
+                            <h3 class="derma-card-title">Microneedling</h3>
+                            <p class="derma-card-desc">Microneedling involves stimulation of the natural processes of
+                                skin renewal to improve its texture, toning and appearance of fine lines.</p>
+                        </div>
+                        <div class="derma-card-bottom">
+                            <a href="#consultationModal" data-bs-toggle="modal" class="editorial-link">
+                                Book Consultation <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 06. EXOSOMES -->
+                <div class="col-lg-6 col-md-6 col-12 d-flex">
+                    <div class="derma-card w-100">
+                        <div class="derma-card-top">
+                            <span class="editorial-label">06. Dermatology / Skin Care</span>
+                            <h3 class="derma-card-title">Exosomes</h3>
+                            <p class="derma-card-desc">Exosome skin treatment is aimed at rejuvenating and renewing the
+                                skin.</p>
+                        </div>
+                        <div class="derma-card-bottom">
+                            <a href="#consultationModal" data-bs-toggle="modal" class="editorial-link">
+                                Book Consultation <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 07. DERMA ROLLER -->
+                <div class="col-lg-6 col-md-6 col-12 d-flex">
+                    <div class="derma-card w-100">
+                        <div class="derma-card-top">
+                            <span class="editorial-label">07. Dermatology / Skin Care</span>
+                            <h3 class="derma-card-title">Derma Roller</h3>
+                            <p class="derma-card-desc">Derma roller involves a use of microneedling to help in skin
+                                renewal and improvement of its texture.</p>
+                        </div>
+                        <div class="derma-card-bottom">
+                            <a href="#consultationModal" data-bs-toggle="modal" class="editorial-link">
+                                Book Consultation <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 08. CHEMICAL PEELS -->
+                <div class="col-lg-6 col-md-6 col-12 d-flex">
+                    <div class="derma-card w-100">
+                        <div class="derma-card-top">
+                            <span class="editorial-label">08. Dermatology / Skin Care</span>
+                            <h3 class="derma-card-title">Chemical Peels</h3>
+                            <p class="derma-card-desc">Chemical peel involves application of specialized solutions that
+                                help in exfoliating the skin to improve its pigmentation and texture.</p>
+                        </div>
+                        <div class="derma-card-bottom">
+                            <a href="#consultationModal" data-bs-toggle="modal" class="editorial-link">
+                                Book Consultation <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 09. OXYGEN FACIALS -->
+                <div class="col-lg-6 col-md-6 col-12 d-flex">
+                    <div class="derma-card w-100">
+                        <div class="derma-card-top">
+                            <span class="editorial-label">09. Dermatology / Skin Care</span>
+                            <h3 class="derma-card-title">Oxygen Facials</h3>
+                            <p class="derma-card-desc">Oxygen facials aim at refreshing and revitalizing the skin with
+                                oxygen.</p>
+                        </div>
+                        <div class="derma-card-bottom">
+                            <a href="#consultationModal" data-bs-toggle="modal" class="editorial-link">
+                                Book Consultation <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. WART REMOVAL -->
+                <div class="col-lg-6 col-md-6 col-12 d-flex">
+                    <div class="derma-card w-100">
+                        <div class="derma-card-top">
+                            <span class="editorial-label">10. Dermatology / Skin Care</span>
+                            <h3 class="derma-card-title">Wart Removal</h3>
+                            <p class="derma-card-desc">Wart removal treatments involve removing the warts after clinical
+                                assessment.</p>
+                        </div>
+                        <div class="derma-card-bottom">
+                            <a href="#consultationModal" data-bs-toggle="modal" class="editorial-link">
+                                Book Consultation <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================
+         SECTION 3: CTA
+         ========================================= -->
+    <section class="hr-cta">
+        <div class="hr-cta-bg"></div>
+        <div class="hr-cta-overlay"></div>
+        <div class="container position-relative z-3 text-center">
+            <div class="hr-cta-content mx-auto">
+                <h2 class="hr-heading-lg mb-4">Dermatology & <span class="hr-highlight">Skin Care</span></h2>
+                <div class="hr-cta-buttons justify-content-center">
+                    <a href="#" class="hr-btn-dark" data-bs-toggle="modal" data-bs-target="#consultationModal">Book
+                        Consultation</a>
+                    <a href="tel:+919035554728" class="hr-btn-outline">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader -->
+    <script src="assets/js/load-components.js"></script>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Global Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

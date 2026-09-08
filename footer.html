@@ -1,0 +1,553 @@
+<style>
+  /* ==========================================================================
+     HSN Super Speciality - Compact Luxury Dark Footer
+     ========================================================================== */
+  .hsn-compact-footer {
+    background-color: #121214;
+    border-top: 1px solid rgba(201, 164, 106, 0.3);
+    color: rgba(255, 255, 255, 0.75);
+    font-family: var(--font-sans, "Outfit", sans-serif);
+    position: relative;
+  }
+
+  .hsn-footer-title {
+    font-family: var(--font-serif, "Outfit", sans-serif);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #FFFFFF;
+    margin-bottom: 0;
+  }
+
+  .hsn-footer-heading {
+    font-family: var(--font-serif, "Outfit", sans-serif);
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary, #C9A46A);
+    margin-bottom: 18px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .hsn-footer-subheading {
+    font-family: var(--font-serif, "Outfit", sans-serif);
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary, #C9A46A);
+  }
+
+  .hsn-footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hsn-footer-link {
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+
+  .hsn-footer-link:hover {
+    color: var(--color-secondary, #C9A46A) !important;
+    transform: translateX(3px);
+  }
+
+  .hsn-footer-contact-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-block;
+  }
+
+  .hsn-footer-contact-link:hover {
+    color: var(--color-secondary, #C9A46A) !important;
+  }
+
+  .hsn-footer-social-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 164, 106, 0.35);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary, #C9A46A);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .hsn-footer-social-btn:hover {
+    background: var(--color-secondary, #C9A46A);
+    color: #121214 !important;
+    border-color: var(--color-secondary, #C9A46A);
+    transform: translateY(-2px);
+  }
+
+  .hsn-footer-centres-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hsn-footer-centres-list li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hsn-footer-centres-list li::before {
+    content: "•";
+    color: var(--color-secondary, #C9A46A);
+    font-size: 14px;
+  }
+
+  .hsn-footer-locations-link {
+    color: var(--color-secondary, #C9A46A);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s ease, color 0.2s ease;
+  }
+
+  .hsn-footer-locations-link:hover {
+    color: #FFFFFF !important;
+    gap: 8px;
+  }
+
+  .hsn-footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .hsn-footer-legal-link {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    font-size: 12.5px;
+    transition: color 0.2s ease;
+  }
+
+  .hsn-footer-legal-link:hover {
+    color: var(--color-secondary, #C9A46A);
+  }
+
+  /* Brand Logo & Header-matching Title */
+  .hsn-footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    margin-bottom: 14px;
+  }
+
+  .hsn-footer-logo-wrap {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .hsn-footer-logo-top {
+    font-family: var(--font-sans, "Outfit", sans-serif);
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .hsn-footer-logo-bottom {
+    font-family: var(--font-sans, "Outfit", sans-serif);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--color-secondary, #C9A46A);
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-top: 2px;
+    display: block;
+  }
+
+  @media (max-width: 767.98px) {
+    .hsn-compact-footer {
+      padding-top: 2.25rem !important;
+      padding-bottom: 1.75rem !important;
+    }
+
+    .hsn-footer-logo-wrap {
+      width: 44px;
+      height: 44px;
+    }
+
+    .hsn-footer-logo-top {
+      font-size: 14.5px;
+    }
+
+    .hsn-footer-logo-bottom {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+    }
+
+    .hsn-footer-heading {
+      margin-top: 6px;
+      margin-bottom: 14px;
+      font-size: 13px;
+    }
+
+    .hsn-footer-nav-list {
+      gap: 9px;
+    }
+
+    .hsn-footer-link {
+      padding: 3px 0;
+      font-size: 13.5px;
+    }
+
+    .hsn-footer-bottom {
+      text-align: center;
+      gap: 12px !important;
+    }
+
+    .hsn-footer-bottom .d-flex {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+<!-- Compact Luxury Dark Footer -->
+<footer class="hsn-compact-footer pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4 g-lg-5 pb-4">
+
+      <!-- COLUMN 1 — HSN SUPER SPECIALITY -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <a href="index.html" class="hsn-footer-brand">
+          <div class="hsn-footer-logo-wrap">
+            <img src="assets/images/logo.webp" alt="HSN Super Speciality Logo Emblem" class="w-100 h-100"
+              style="object-fit: contain;" />
+          </div>
+          <div class="d-flex flex-column text-start">
+            <span class="hsn-footer-logo-top">HSN Super Speciality</span>
+            <span class="hsn-footer-logo-bottom">Hair Transplantation Centre</span>
+          </div>
+        </a>
+        <p class="mb-4" style="color: rgba(255, 255, 255, 0.7); line-height: 1.6; max-width: 260px; font-size: 14px;">
+          Advanced Hair Restoration &amp; Aesthetic Treatments
+        </p>
+        <!-- Existing HSN social media icons -->
+        <div class="d-flex align-items-center gap-2">
+          <a href="https://www.instagram.com/hsnhairtransplant/" target="_blank" rel="noopener noreferrer"
+            class="hsn-footer-social-btn" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UCvPAg814mn3C3P5ETNjpihw" target="_blank" rel="noopener noreferrer"
+            class="hsn-footer-social-btn" aria-label="YouTube">
+            <i class="bi bi-youtube"></i>
+          </a>
+          <a href="https://www.facebook.com/people/HSN-Hair-Transplatation/100064108442274/" target="_blank"
+            rel="noopener noreferrer" class="hsn-footer-social-btn" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- COLUMN 2 — QUICK LINKS -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5 class="hsn-footer-heading">Quick Links</h5>
+        <ul class="hsn-footer-nav-list">
+          <li><a href="index.html" class="hsn-footer-link">Home</a></li>
+          <li><a href="about.html" class="hsn-footer-link">About HSN</a></li>
+          <li><a href="before-after.html" class="hsn-footer-link">Results</a></li>
+          <li><a href="video-gallery.html" class="hsn-footer-link">Video Gallery</a></li>
+          <li><a href="contact.html" class="hsn-footer-link">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3 — OUR SERVICES -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5 class="hsn-footer-heading">Our Services</h5>
+        <ul class="hsn-footer-nav-list">
+          <li><a href="hair-restoration.html" class="hsn-footer-link">Hair Transplantation</a></li>
+          <li><a href="hair-restoration.html" class="hsn-footer-link">Stem Cell Therapy</a></li>
+          <li><a href="scalp-cosmetic-treatments.html" class="hsn-footer-link">Scalp Aesthetics</a></li>
+          <li><a href="dermatology-services.html" class="hsn-footer-link">Dermatology / Skin Care</a></li>
+          <li><a href="facial-hair-restoration.html" class="hsn-footer-link">Eyebrow Restoration</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 4 — CONTACT & LOCATIONS -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5 class="hsn-footer-heading">Contact Us</h5>
+
+        <div class="mb-3">
+          <span class="d-block mb-1" style="color: rgba(255, 255, 255, 0.55); font-size: 12.5px;">Phone:</span>
+          <a href="tel:+919035554728" class="hsn-footer-contact-link fw-semibold" style="font-size: 15px;">
+            +91 90355 54728
+          </a>
+        </div>
+
+        <div class="mb-4">
+          <span class="d-block mb-1" style="color: rgba(255, 255, 255, 0.55); font-size: 12.5px;">Email:</span>
+          <a href="mailto:hsnhairtransplant@gmail.com" class="hsn-footer-contact-link" style="font-size: 14px;">
+            hsnhairtransplant@gmail.com
+          </a>
+        </div>
+
+        <div class="pt-1">
+          <h6 class="hsn-footer-subheading mb-2">Our Locations</h6>
+
+          <div class="d-flex flex-wrap gap-2 mb-3 mt-3">
+            <a href="contact.html#locations" class="badge rounded-pill text-decoration-none"
+              style="background: rgba(201,164,106,0.1); border: 1px solid rgba(201,164,106,0.3); color: var(--color-secondary); font-size: 11px; padding: 5px 10px;">Bangalore</a>
+            <a href="contact.html#locations" class="badge rounded-pill text-decoration-none"
+              style="background: rgba(201,164,106,0.1); border: 1px solid rgba(201,164,106,0.3); color: var(--color-secondary); font-size: 11px; padding: 5px 10px;">Coimbatore</a>
+            <a href="contact.html#locations" class="badge rounded-pill text-decoration-none"
+              style="background: rgba(201,164,106,0.1); border: 1px solid rgba(201,164,106,0.3); color: var(--color-secondary); font-size: 11px; padding: 5px 10px;">Chennai</a>
+            <a href="contact.html#locations" class="badge rounded-pill text-decoration-none"
+              style="background: rgba(201,164,106,0.1); border: 1px solid rgba(201,164,106,0.3); color: var(--color-secondary); font-size: 11px; padding: 5px 10px;">Hyderabad</a>
+          </div>
+          <a href="contact.html#locations" class="hsn-footer-locations-link">
+            View All Locations &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM FOOTER -->
+    <div class="hsn-footer-bottom pt-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div>
+        &copy; 2026 HSN Super Speciality. All Rights Reserved.
+      </div>
+      <div class="d-flex align-items-center">
+        <a href="#privacy" class="hsn-footer-legal-link">Privacy Policy</a>
+        <span class="mx-2" style="color: rgba(255, 255, 255, 0.25);">|</span>
+        <a href="#terms" class="hsn-footer-legal-link">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- 13. Consultation Booking Modular Calendar Modal -->
+<div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-4 p-md-5">
+        <!-- Close button -->
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-4" data-bs-dismiss="modal"
+          aria-label="Close" id="consultation-modal-close"></button>
+        <!-- STEP 1: Personal Credentials panel -->
+        <div id="booking-step-1-panel">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i data-lucide="sparkles" class="text-secondary" style="width: 16px; height: 16px;"></i>
+            <span class="section-subtitle">Private Suite Consultation</span>
+          </div>
+          <h3 class="text-3xl font-serif text-primary tracking-wide mb-2">RESERVE A SECTION WITH OUR DOCTORS IN
+            ABSOLUTE PRIVACY</h3>
+          <p class="text-sm text-muted mb-4">
+            Schedule your confidential consultation with our specialists.
+          </p>
+
+          <form id="booking-form-step-1">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="booking-name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="booking-name" placeholder="e.g. Vikram Rao" required />
+              </div>
+              <div class="col-md-6">
+                <label for="booking-phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="booking-phone" placeholder="e.g. +91 90355 54728" required />
+              </div>
+              <div class="col-12 mt-3">
+                <label for="booking-email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="booking-email" placeholder="e.g. name@domain.com"
+                  required />
+              </div>
+            </div>
+            <div class="col-12 mt-3">
+              <label for="booking-service" class="form-label">Desired Therapy</label>
+              <select class="form-select" id="booking-service">
+                <option value="Hair Transplantation">Hair Transplantation</option>
+                <option value="Eyebrow Restoration">Eyebrow Restoration</option>
+                <option value="Beard Restoration">Beard Restoration</option>
+                <option value="Stem Cell Therapy">Stem Cell Therapy</option>
+                <option value="Scalp Treatment">Scalp Treatment</option>
+              </select>
+            </div>
+            <div class="col-12 mt-4">
+              <button type="submit" class="btn btn-gold-solid w-100 py-3">
+                PROCEED TO CALENDAR
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- STEP 2: Choose Date & Timeslot panel -->
+        <div id="booking-step-2-panel" style="display: none;">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i data-lucide="calendar" class="text-secondary" style="width: 16px; height: 16px;"></i>
+            <span class="text-xs font-mono tracking-widest text-secondary uppercase">Step 2 of 2</span>
+          </div>
+          <h3 class="text-3xl font-serif text-primary tracking-wide mb-2">CHOOSE DATE & TIME</h3>
+          <p class="text-sm text-muted mb-4">
+            Select your private consult slot. A dedicated surgical advisor will verify your reservation.
+          </p>
+
+          <form id="booking-form-step-2">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="booking-date" class="form-label">Select Date</label>
+                <input type="date" class="form-control" id="booking-date" required />
+              </div>
+
+              <div class="col-12 mt-3">
+                <label class="form-label d-block mb-2">Available Private Timeslots</label>
+                <div class="row g-2">
+                  <div class="col-4">
+                    <button type="button" class="btn time-slot-btn w-100" data-time="10:00 AM">10:00 AM</button>
+                  </div>
+                  <div class="col-4">
+                    <button type="button" class="btn time-slot-btn w-100" data-time="11:30 AM">11:30 AM</button>
+                  </div>
+                  <div class="col-4">
+                    <button type="button" class="btn time-slot-btn w-100" data-time="02:00 PM">02:00 PM</button>
+                  </div>
+                  <div class="col-4 mt-2">
+                    <button type="button" class="btn time-slot-btn w-100" data-time="04:30 PM">04:30 PM</button>
+                  </div>
+                  <div class="col-4 mt-2">
+                    <button type="button" class="btn time-slot-btn w-100" data-time="06:00 PM">06:00 PM</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 mt-3">
+                <label for="booking-notes" class="form-label">Aesthetic Goals / Notes (Optional)</label>
+                <textarea class="form-control" id="booking-notes" rows="3"
+                  placeholder="Explain your expectations or hair loss history..."></textarea>
+              </div>
+
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-gold-solid w-100 py-3">
+                  CONFIRM RESERVATION
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- STEP 3: Success Screen panel -->
+        <div id="booking-success-panel" style="display: none;" class="text-center">
+          <div
+            class="w-16 h-16 rounded-circle bg-success bg-opacity-10 text-success d-inline-flex align-items-center justify-content-center mb-4"
+            style="width: 64px; height: 64px;">
+            <i data-lucide="check" style="width: 32px; height: 32px;"></i>
+          </div>
+          <span class="section-subtitle d-block mb-2">Reservation
+            Received</span>
+          <h3 class="text-4xl font-serif text-primary tracking-wide mb-3">AN ARTISAN AWAITS YOU</h3>
+          <p class="text-sm text-muted max-w-md mx-auto leading-relaxed mb-4">
+            Thank you, <strong class="text-primary font-semibold" id="success-summary-name">Patient</strong>. Your
+            requested VIP Consultation for <strong class="text-secondary" id="success-summary-service">Therapy</strong>
+            on <strong class="text-primary" id="success-summary-date">Date</strong> at <strong class="text-primary"
+              id="success-summary-time">Time</strong> is pre-registered.
+          </p>
+
+          <div
+            class="p-4 border border-secondary border-opacity-10 bg-primary bg-opacity-5 max-w-md mx-auto mb-4 text-start">
+            <div class="d-flex justify-content-between text-xs font-mono mb-2">
+              <span class="text-muted">Centre</span>
+              <span class="text-primary font-semibold">HSN Super Speciality</span>
+            </div>
+            <div class="d-flex justify-content-between text-xs font-mono mb-2">
+              <span class="text-muted">Consult Room</span>
+              <span class="text-primary">VIP Suite</span>
+            </div>
+            <div class="d-flex justify-content-between text-xs font-mono">
+              <span class="text-muted">Status</span>
+              <span class="text-secondary">Awaiting Call confirmation</span>
+            </div>
+          </div>
+
+          <p class="text-[10px] text-muted italic">
+            A surgical concierge will call you within 30 minutes to finalize the validation.
+          </p>
+
+          <button type="button" class="btn btn-gold-outline mt-4 px-5" id="booking-success-return">
+            Return to Home
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Social Media Bar -->
+<div class="floating-social-bar">
+  <a href="https://www.facebook.com/people/HSN-Hair-Transplatation/100064108442274/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+    <i class="bi bi-facebook"></i>
+  </a>
+  <a href="https://www.instagram.com/hsnhairtransplant/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <i class="bi bi-instagram"></i>
+  </a>
+  <a href="https://www.youtube.com/channel/UCvPAg814mn3C3P5ETNjpihw" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+    <i class="bi bi-youtube"></i>
+  </a>
+</div>
+
+<!-- 14. Pulsing WhatsApp Concierge floating widget -->
+<div class="floating-whatsapp-container">
+  <div class="whatsapp-popup-text animate-pulse">
+    <i data-lucide="message-circle" style="width: 10px; height: 10px;"></i>
+    <span>Chat With Us</span>
+  </div>
+  <a href="https://wa.me/919035554728?text=Hello%20HSN%20Hair%20Transplant%20Centre,%20I%20am%20looking%20to%20schedule%20an%20expert%20consultation."
+    target="_blank" rel="noreferrer" class="whatsapp-trigger-btn" id="floating-whatsapp-trigger"
+    aria-label="WhatsApp chat">
+    <div class="whatsapp-halo-1"></div>
+    <div class="whatsapp-halo-2"></div>
+    <i data-lucide="message-square" style="width: 22px; height: 22px;"></i>
+  </a>
+</div>
+
+<!-- 15. Video Review Play Popup Modal -->
+<div class="modal fade" id="videoReviewModal" tabindex="-1" aria-labelledby="videoReviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 bg-transparent">
+      <div class="modal-body p-0 position-relative">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3 btn-close-white"
+          data-bs-dismiss="modal" aria-label="Close" style="z-index: 1055;"></button>
+        <div class="modal-video-container ratio ratio-16x9 shadow-2xl">
+          <iframe id="testimonial-iframe" src="" title="Video review player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

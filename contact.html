@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Transform your confidence with advanced hair restoration and dermatology treatments at HSN Hair Restoration. Hair Transplant, PRP, GFC Therapy, Beard Transplant, Scalp Treatments and more across Bangalore, Chennai & Coimbatore." />
+    <title>Hair Transplant &amp; Hair Restoration Clinic | HSN Hair Restoration | Bangalore, Chennai &amp; Coimbatore
+    </title>
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom Style sheets -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <style>
+        .about-hero {
+            min-height: 580px !important;
+            background-position: right top 80px !important;
+            background-size: cover !important;
+            position: relative;
+        }
+
+        @media (max-width: 991.98px) {
+            .about-hero {
+                min-height: 480px !important;
+                background-position: 85% top 80px !important;
+                background-size: cover !important;
+            }
+
+            #about-hero::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, rgba(248, 247, 244, 0.90) 0%, rgba(248, 247, 244, 0.65) 50%, rgba(248, 247, 244, 0.92) 100%) !important;
+                z-index: 1;
+            }
+
+            #about-hero .about-hero-container {
+                position: relative;
+                z-index: 3;
+            }
+
+            #about-hero .about-hero-title {
+                color: #1D1D1F !important;
+                text-shadow: none !important;
+            }
+
+            #about-hero .about-hero-title-accent {
+                color: #C9A46A !important;
+                text-shadow: none !important;
+            }
+
+            #about-hero .about-hero-desc {
+                color: #444444 !important;
+                text-shadow: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Component (loaded dynamically) -->
+    <div id="header-placeholder"></div>
+
+    <!-- 4. Hero Section -->
+    <section class="about-hero" id="about-hero"
+        style="background-image: url('assets/images/contact-page-banner.webp');">
+        <div class="about-hero-container">
+            <div class="about-hero-content mt-5">
+                <span class="about-hero-label section-subtitle">GET IN TOUCH</span>
+
+                <h1 class="about-hero-title">
+                    Start Your<br>
+                    <span class="about-hero-title-accent">Hair Restoration Journey</span>
+                </h1>
+
+                <p class="about-hero-desc">
+                    Connect with our specialists for expert guidance, personalized hair restoration, PRP, beard
+                    restoration, scalp treatments, and dermatology care.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 2 BOOK A CONSULTATION
+         ========================================= -->
+    <section class="pb-5" style="background-color: var(--color-bg-main);">
+        <div class="container" style="position: relative; z-index: 10; margin-top:100px; margin-bottom:100px;">
+            <div class="row g-lg-5 g-4">
+                <!-- Left Side: Premium Appointment Form (55%) -->
+                <div class="col-lg-7">
+                    <div class="luxury-contact-card p-3 p-md-5">
+                        <form id="contact-booking-form">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label for="contact-name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="contact-name"
+                                        placeholder="e.g. Vikram Rao" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-phone" class="form-label">Mobile Number</label>
+                                    <input type="tel" class="form-control" id="contact-phone"
+                                        placeholder="e.g. +91 90355 54728" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="contact-email"
+                                        placeholder="e.g. name@domain.com" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-city" class="form-label">City</label>
+                                    <input type="text" class="form-control" id="contact-city"
+                                        placeholder="e.g. Bangalore" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-clinic" class="form-label">Preferred Clinic</label>
+                                    <select class="form-select" id="contact-clinic" required>
+                                        <option value="" disabled selected>Select Clinic</option>
+                                        <option value="Bangalore">Bangalore</option>
+                                        <option value="Coimbatore">Coimbatore</option>
+                                        <option value="Chennai">Chennai</option>
+                                        <option value="Hyderabad">Hyderabad</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-treatment" class="form-label">Treatment</label>
+                                    <select class="form-select" id="contact-treatment" required>
+                                        <option value="" disabled selected>Select Therapy</option>
+                                        <option value="Hair Transplantation">Hair Transplantation</option>
+                                        <option value="Eyebrow Restoration">Eyebrow Restoration</option>
+                                        <option value="Beard Restoration">Beard Restoration</option>
+                                        <option value="Stem Cell Therapy">Stem Cell Therapy</option>
+                                        <option value="Scalp Treatment">Scalp Treatment</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="contact-date" class="form-label">Preferred Date</label>
+                                    <input type="date" class="form-control" id="contact-date" required />
+                                </div>
+                                <div class="col-12">
+                                    <label for="contact-message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="contact-message" rows="4"
+                                        placeholder="How can we help you? Describe your concerns..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-gold-solid w-100 py-3">
+                                        BOOK CONSULTATION
+                                    </button>
+                                    <p class="text-center text-muted mt-3 mb-0" style="font-size: 13px;">
+                                        "Our patient care team will contact you shortly."
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Side: Contact Information Card (45%) -->
+                <div class="col-lg-5">
+                    <div class="contact-info-card p-3 p-md-5">
+                        <div>
+                            <h3 class="font-serif mb-4" style="font-size: 24px; font-weight: 700;">Contact Information</h3>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-label">Appointment / Consultation</div>
+                                <a href="tel:+919035554728" class="contact-info-val">+91 90355 54728</a>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-label">Email</div>
+                                <a href="mailto:hsnhtindia@gmail.com" class="contact-info-val"
+                                    style="font-size: 18px;">hsnhtindia@gmail.com</a>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-label">Working Hours</div>
+                                <div class="font-sans"
+                                    style="font-size: 16px; font-weight: 600; color: var(--color-primary);">
+                                    9:00 AM – 6:00 PM (Mon-Sat)
+                                </div>
+                                <div class="font-sans mt-1"
+                                    style="font-size: 15px; color: var(--color-text-secondary);">
+                                    Timings vary by location
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social-icons">
+                            <a href="https://www.instagram.com/hsnhairtransplant/" target="_blank"
+                                rel="noopener noreferrer" class="contact-social-icon" aria-label="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/people/HSN-Hair-Transplatation/100064108442274/"
+                                target="_blank" rel="noopener noreferrer" class="contact-social-icon"
+                                aria-label="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCvPAg814mn3C3P5ETNjpihw" target="_blank"
+                                rel="noopener noreferrer" class="contact-social-icon" aria-label="YouTube">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 3 — OUR CLINICS
+         ========================================= -->
+    <section class="py-5" style="background-color: var(--color-bg-alt);">
+        <div class="container text-center py-4">
+            <span class="editorial-label section-subtitle">OUR LOCATIONS</span>
+            <h2 class="editorial-title mb-4" style="font-family: var(--font-sans); font-size: 46px; font-weight: 700;">
+                Visit Our <span class="hr-highlight">Hair Centres</span>
+            </h2>
+            <p class="editorial-desc mx-auto" style="max-width: 700px; margin-bottom: 50px;">
+                Visit the HSN Super Speciality nearest you for expert consultations and advanced hair restoration treatments.
+            </p>
+
+                        <div class="row clinic-cards-row g-4 text-start justify-content-center">
+                <!-- Bangalore Clinic -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="clinic-card">
+                        <div>
+                            <div class="clinic-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <h3 class="clinic-name font-serif">Bangalore</h3>
+                            <p class="clinic-address font-sans">
+                                HSN Super Speciality<br>
+                                #2948, 2nd Floor, MKK Road<br>
+                                D Block, Rajajinagar, 2nd Stage<br>
+                                Bangalore - 560010
+                            </p>
+                        </div>
+                        <div>
+                            <div class="clinic-details">
+                                <div class="clinic-detail-item">
+                                    <i class="bi bi-telephone clinic-detail-icon"></i>
+                                    <span><strong>Appointment:</strong> +91 90355 54728</span>
+                                </div>
+                                <div class="clinic-detail-item">
+                                    <i class="bi bi-clock clinic-detail-icon"></i>
+                                    <span>Mon - Sat: 9:00 AM – 6:00 PM<br>Sunday Holiday</span>
+                                </div>
+                            </div>
+                            <div class="clinic-actions">
+                                <a href="tel:+919035554728"
+                                    class="btn btn-gold-outline py-2.5 px-3 text-center flex-grow-1"
+                                    style="font-size: 11px;">CALL NOW</a>
+                                <a href="https://maps.google.com/?q=HSN+Hair+Centre+Rajajinagar+Bangalore"
+                                    target="_blank" rel="noreferrer"
+                                    class="btn btn-gold-solid py-2.5 px-3 text-center flex-grow-1"
+                                    style="font-size: 11px;">GET DIRECTIONS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chennai Clinic -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="clinic-card">
+                        <div>
+                            <div class="clinic-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <h3 class="clinic-name font-serif">Chennai</h3>
+                            <p class="clinic-address font-sans">
+                                HSN Super Speciality<br>
+                                #17 Muthiyal Chetty Street<br>
+                                Salma Nagar, Purasaiwalkam<br>
+                                Chennai - 600007<br>
+                                <span class="text-muted" style="font-size: 13px;">Landmark: Madarsha & Sons</span>
+                            </p>
+                        </div>
+                        <div>
+                            <div class="clinic-details">
+                                <div class="clinic-detail-item">
+                                    <i class="bi bi-telephone clinic-detail-icon"></i>
+                                    <span><strong>Appointment:</strong> +91 90355 54728</span>
+                                </div>
+                                <div class="clinic-detail-item">
+                                    <i class="bi bi-clock clinic-detail-icon"></i>
+                                    <span>9:00 AM - 6:00 PM<br>Subject to confirmation</span>
+                                </div>
+                            </div>
+                            <div class="clinic-actions">
+                                <a href="tel:+919035554728"
+                                    class="btn btn-gold-outline py-2.5 px-3 text-center flex-grow-1"
+                                    style="font-size: 11px;">CALL NOW</a>
+                                <a href="https://maps.google.com/?q=HSN+Hair+Centre+Purasaiwalkam+Chennai"
+                                    target="_blank" rel="noreferrer"
+                                    class="btn btn-gold-solid py-2.5 px-3 text-center flex-grow-1"
+                                    style="font-size: 11px;">GET DIRECTIONS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coimbatore Clinic -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="clinic-card">
+                        <div>
+                            <div class="clinic-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <h3 class="clinic-name font-serif">Coimbatore</h3>
+                            <p class="clinic-address font-sans">
+                                HSN Super Speciality<br>
+                                Lakshmi Mill Junction, Opp Lulu Market<br>
+                                Sri Ram Tower, 1st Floor<br>
+                                PN Palayam, Coimbatore
+                            </p>
+                        </div>
+                        <div>
+                            <div class="clinic-details">
+                                <div class="clinic-detail-item">
+                                    <i class="bi bi-telephone clinic-detail-icon"></i>
+                                    <span><strong>Appointment:</strong> +91 90355 54728</span>
+                                </div>
+                                <div class="clinic-detail-item">
+                                    <i class="bi bi-clock clinic-detail-icon"></i>
+                                    <span>Tue - Sun: 9:00 AM – 6:00 PM<br>Monday Holiday</span>
+                                </div>
+                            </div>
+                            <div class="clinic-actions">
+                                <a href="tel:+919035554728"
+                                    class="btn btn-gold-outline py-2.5 px-3 text-center flex-grow-1"
+                                    style="font-size: 11px;">CALL NOW</a>
+                                <a href="https://maps.google.com/?q=HSN+Hair+Centre+PN+Palayam+Coimbatore"
+                                    target="_blank" rel="noreferrer"
+                                    class="btn btn-gold-solid py-2.5 px-3 text-center flex-grow-1"
+                                    style="font-size: 11px;">GET DIRECTIONS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hyderabad Clinic -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="clinic-card">
+                        <div>
+                            <div class="clinic-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <h3 class="clinic-name font-serif">Hyderabad</h3>
+                            <p class="clinic-address font-sans">
+                                HSN Super Speciality<br>
+                                First Floor Plot no. 8-3-1060/B4<br>
+                                Block B, Commercial Complex<br>
+                                Srinagar Colony, Banjara Hills<br>
+                                Hyderabad - 500073
+                            </p>
+                        </div>
+                        <div>
+                            <div class="clinic-details">
+                                <div class="clinic-detail-item">
+                                    <i class="bi bi-telephone clinic-detail-icon"></i>
+                                    <span><strong>Appointment:</strong> +91 90355 54728</span>
+                                </div>
+                                <div class="clinic-detail-item">
+                                    <i class="bi bi-clock clinic-detail-icon"></i>
+                                    <span>9:00 AM - 6:00 PM<br>Subject to confirmation</span>
+                                </div>
+                            </div>
+                            <div class="clinic-actions">
+                                <a href="tel:+919035554728"
+                                    class="btn btn-gold-outline py-2.5 px-3 text-center flex-grow-1"
+                                    style="font-size: 11px;">CALL NOW</a>
+                                <a href="https://maps.app.goo.gl/iUyVKYZUJMs2jGqj9?g_st=iw"
+                                    target="_blank" rel="noreferrer"
+                                    class="btn btn-gold-solid py-2.5 px-3 text-center flex-grow-1"
+                                    style="font-size: 11px;">GET DIRECTIONS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 4 — PREMIUM GOOGLE MAP EXPERIENCE
+         ========================================= -->
+    <section class="py-5" style="background-color: var(--color-bg-main);">
+        <div class="container py-4">
+            <div class="row g-4 justify-content-center">
+                <!-- Bangalore Map Card -->
+                <div class="col-md-6 col-lg-6">
+                    <div class="map-card">
+                        <h4 class="font-serif mb-2" style="font-size: 20px; font-weight: 700;">Bangalore Hair Centre</h4>
+                        <p class="text-muted text-xs mb-0" style="font-size: 13px; line-height: 1.4;">Rajajinagar 2nd Stage, Bangalore</p>
+                        <div class="map-iframe-wrapper">
+                            <iframe
+                                src="https://maps.google.com/maps?q=HSN+Hair+Centre,+Rajajinagar,+Bangalore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen=""
+                                loading="lazy"></iframe>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://maps.google.com/?q=HSN+Hair+Centre+Rajajinagar+Bangalore" target="_blank"
+                                rel="noreferrer" class="btn btn-gold-solid py-2 px-3 text-center flex-grow-1 font-sans"
+                                style="font-size: 11px;">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> DIRECTIONS
+                            </a>
+                            <a href="tel:+919035554728" class="btn btn-gold-outline py-2 px-3 text-center"
+                                style="font-size: 11px;" aria-label="Call Bangalore Clinic">
+                                <i class="bi bi-telephone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chennai Map Card -->
+                <div class="col-md-6 col-lg-6">
+                    <div class="map-card">
+                        <h4 class="font-serif mb-2" style="font-size: 20px; font-weight: 700;">Chennai Hair Centre</h4>
+                        <p class="text-muted text-xs mb-0 font-sans" style="font-size: 13px; line-height: 1.4;">Purasaiwalkam, Chennai</p>
+                        <div class="map-iframe-wrapper">
+                            <iframe
+                                src="https://maps.google.com/maps?q=HSN+Hair+Centre,+Purasaiwalkam,+Chennai&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen=""
+                                loading="lazy"></iframe>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://maps.google.com/?q=HSN+Hair+Centre+Purasaiwalkam+Chennai" target="_blank"
+                                rel="noreferrer" class="btn btn-gold-solid py-2 px-3 text-center flex-grow-1 font-sans"
+                                style="font-size: 11px;">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> DIRECTIONS
+                            </a>
+                            <a href="tel:+919035554728" class="btn btn-gold-outline py-2 px-3 text-center"
+                                style="font-size: 11px;" aria-label="Call Chennai Clinic">
+                                <i class="bi bi-telephone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coimbatore Map Card -->
+                <div class="col-md-6 col-lg-6">
+                    <div class="map-card">
+                        <h4 class="font-serif mb-2" style="font-size: 20px; font-weight: 700;">Coimbatore Hair Centre</h4>
+                        <p class="text-muted text-xs mb-0 font-sans" style="font-size: 13px; line-height: 1.4;">PN Palayam, Coimbatore</p>
+                        <div class="map-iframe-wrapper">
+                            <iframe
+                                src="https://maps.google.com/maps?q=HSN+Hair+Centre,+PN+Palayam,+Coimbatore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen=""
+                                loading="lazy"></iframe>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://maps.google.com/?q=HSN+Hair+Centre+PN+Palayam+Coimbatore" target="_blank"
+                                rel="noreferrer" class="btn btn-gold-solid py-2 px-3 text-center flex-grow-1"
+                                style="font-size: 11px;">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> DIRECTIONS
+                            </a>
+                            <a href="tel:+919035554728" class="btn btn-gold-outline py-2 px-3 text-center"
+                                style="font-size: 11px;" aria-label="Call Coimbatore Clinic">
+                                <i class="bi bi-telephone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hyderabad Map Card -->
+                <div class="col-md-6 col-lg-6">
+                    <div class="map-card">
+                        <h4 class="font-serif mb-2" style="font-size: 20px; font-weight: 700;">Hyderabad Hair Centre</h4>
+                        <p class="text-muted text-xs mb-0 font-sans" style="font-size: 13px; line-height: 1.4;">Banjara Hills, Hyderabad</p>
+                        <div class="map-iframe-wrapper">
+                            <iframe
+                                src="https://maps.google.com/maps?q=First+Floor+Plot+no.+8-3-1060/B4+,+Block+B,+Commercial+Complex,+Srinagar+Colony+,+Banjara+Hills+,+Hyderabad&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen=""
+                                loading="lazy"></iframe>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://maps.app.goo.gl/iUyVKYZUJMs2jGqj9?g_st=iw" target="_blank"
+                                rel="noreferrer" class="btn btn-gold-solid py-2 px-3 text-center flex-grow-1"
+                                style="font-size: 11px;">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> DIRECTIONS
+                            </a>
+                            <a href="tel:+919035554728" class="btn btn-gold-outline py-2 px-3 text-center"
+                                style="font-size: 11px;" aria-label="Call Hyderabad Clinic">
+                                <i class="bi bi-telephone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 6 — FREQUENTLY ASKED QUESTIONS
+         ========================================= -->
+    <section class="py-5" style="background-color: var(--color-bg-main);">
+        <div class="container py-4" style="max-width: 800px;">
+            <div class="text-center mb-5">
+                <span class="editorial-label section-subtitle">QUESTIONS</span>
+                <h2 class="editorial-title" style="font-family: var(--font-sans); font-size: 46px; font-weight: 700;">
+                    Frequently Asked <span class="hr-highlight">Questions</span>
+                </h2>
+            </div>
+
+            <div class="accordion luxury-accordion mb-5" id="contactFaqAccordion">
+                <!-- Question 1 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="faq-heading-1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-collapse-1" aria-expanded="false" aria-controls="faq-collapse-1">
+                            How do I book a consultation?
+                        </button>
+                    </h3>
+                    <div id="faq-collapse-1" class="accordion-collapse collapse" aria-labelledby="faq-heading-1"
+                        data-bs-parent="#contactFaqAccordion">
+                        <div class="accordion-body">
+                            You can easily book a consultation by filling out the online booking form at the top of this
+                            page, clicking any of the "Book Now" buttons, or calling our clinic desk directly at +91
+                            90355 54728.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="faq-heading-2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-collapse-2" aria-expanded="false" aria-controls="faq-collapse-2">
+                            Which clinic should I visit?
+                        </button>
+                    </h3>
+                    <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2"
+                        data-bs-parent="#contactFaqAccordion">
+                        <div class="accordion-body">
+                            HSN Super Speciality operates advanced facilities in Bangalore, Chennai, Hyderabad, and Coimbatore. We
+                            recommend visiting the location closest to you. All our centers feature identical
+                            state-of-the-art diagnostic equipment and offer the same premium standard of medical care.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="faq-heading-3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-collapse-3" aria-expanded="false" aria-controls="faq-collapse-3">
+                            Do I need an appointment?
+                        </button>
+                    </h3>
+                    <div id="faq-collapse-3" class="accordion-collapse collapse" aria-labelledby="faq-heading-3"
+                        data-bs-parent="#contactFaqAccordion">
+                        <div class="accordion-body">
+                            In case of an emergency, please call us and visit the clinic. We also offer free walk-in consultations.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="faq-heading-4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-collapse-4" aria-expanded="false" aria-controls="faq-collapse-4">
+                            How long does the consultation take?
+                        </button>
+                    </h3>
+                    <div id="faq-collapse-4" class="accordion-collapse collapse" aria-labelledby="faq-heading-4"
+                        data-bs-parent="#contactFaqAccordion">
+                        <div class="accordion-body">
+                            Treatment duration: Around 30 minutes.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="faq-heading-6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-collapse-6" aria-expanded="false" aria-controls="faq-collapse-6">
+                            Can I contact through WhatsApp?
+                        </button>
+                    </h3>
+                    <div id="faq-collapse-6" class="accordion-collapse collapse" aria-labelledby="faq-heading-6"
+                        data-bs-parent="#contactFaqAccordion">
+                        <div class="accordion-body">
+                            Yes, you can directly chat with our patient care coordinators on WhatsApp by clicking the
+                            floating widget in the bottom-right corner or messaging us via the contact info listed on
+                            our site.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="final-cta-card p-5">
+                <h2 class="font-serif mb-4 text-center"
+                    style="font-size: 40px; font-weight: 700; color: var(--color-primary);">
+                    Ready To Restore<br><span class="hr-highlight">Your Confidence?</span>
+                </h2>
+                <p class="mx-auto mb-5 text-center text-muted"
+                    style="max-width: 600px; font-size: 16px; line-height: 1.8;">
+                    Book your consultation today and take the first step toward natural-looking hair restoration with
+                    HSN Super Speciality.
+                </p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 align-items-center">
+                    <button class="btn btn-gold-solid py-3 px-5 text-uppercase" data-bs-toggle="modal"
+                        data-bs-target="#consultationModal">
+                        BOOK CONSULTATION
+                    </button>
+                    <a href="tel:+919035554728" class="btn btn-gold-outline py-3 px-5 text-uppercase">
+                        CALL NOW
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Component (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle (with Popper) CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Lucide Vector Icons Engine CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Component Loader -->
+    <script src="assets/js/load-components.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Scroll-reveal for Our Story cards -->
+    <script>
+        (function () {
+            const observer = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.15 }
+            );
+            document.querySelectorAll('.story-card, .scroll-reveal').forEach(function (card) {
+                observer.observe(card);
+            });
+        })();
+
+        // Form submission redirect to premium VIP success screen of the existing booking modal
+        document.getElementById('contact-booking-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const treatment = document.getElementById('contact-treatment').value;
+            const date = document.getElementById('contact-date').value;
+
+            // Set success summary details in the existing modal success panel
+            document.getElementById('success-summary-name').innerText = name;
+            document.getElementById('success-summary-service').innerText = treatment;
+            document.getElementById('success-summary-date').innerText = date;
+            document.getElementById('success-summary-time').innerText = "Requested Slot";
+
+            // Show the modal
+            const bookingModal = new bootstrap.Modal(document.getElementById('consultationModal'));
+
+            // Toggle panels inside the modal to show success screen directly
+            document.getElementById('booking-step-1-panel').style.display = 'none';
+            document.getElementById('booking-step-2-panel').style.display = 'none';
+            document.getElementById('booking-success-panel').style.display = 'block';
+
+            bookingModal.show();
+        });
+    </script>
+</body>
+
+</html>

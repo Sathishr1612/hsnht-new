@@ -1,0 +1,268 @@
+<!-- 1. Top Scroll Progress Indicator -->
+<!-- <div class="scroll-progress-bar"></div> -->
+
+<!-- 2. Global Gold Grain Overlay -->
+<div class="luxury-grain"></div>
+
+<!-- 3. Navigation Header -->
+<nav class="navbar navbar-expand-lg fixed-top glass-nav py-3" id="main-navbar">
+  <div class="container">
+    <!-- Logo Emblem -->
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <div class="logo-emblem-svg" style="width: 46px; height: 46px;">
+        <img src="assets/images/logo.webp" alt="HSN Super Speciality Logo Emblem" class="w-100 h-100"
+          style="object-fit: contain;" />
+      </div>
+      <div class="d-flex flex-column text-start">
+        <span class="logo-text-top">HSN Super Speciality</span>
+        <span class="logo-text-bottom">Hair Transplantation Centre</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Items -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbar-content">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item luxury-dropdown">
+          <a class="nav-link" href="#">Services <span class="dropdown-caret">▼</span></a>
+          <div class="luxury-dropdown-menu rich-dropdown">
+            <div class="dropdown-grid">
+
+              <a href="hair-restoration.html" class="rich-dropdown-item">
+                <div class="rich-dropdown-icon">
+                  <i data-lucide="scissors" style="width: 18px; height: 18px;"></i>
+                </div>
+                <div class="rich-dropdown-content">
+                  <span class="rich-dropdown-title">Hair Restoration</span>
+                  <span class="rich-dropdown-desc">Advanced Hair Restoration Solutions</span>
+                </div>
+              </a>
+
+              <a href="facial-hair-restoration.html" class="rich-dropdown-item">
+                <div class="rich-dropdown-icon">
+                  <i data-lucide="user" style="width: 18px; height: 18px;"></i>
+                </div>
+                <div class="rich-dropdown-content">
+                  <span class="rich-dropdown-title">Facial Hair Restoration</span>
+                  <span class="rich-dropdown-desc">Beard & Eyebrow Restoration</span>
+                </div>
+              </a>
+
+              <a href="scalp-cosmetic-treatments.html" class="rich-dropdown-item">
+                <div class="rich-dropdown-icon">
+                  <i data-lucide="droplet" style="width: 18px; height: 18px;"></i>
+                </div>
+                <div class="rich-dropdown-content">
+                  <span class="rich-dropdown-title">Scalp & Cosmetic Treatments</span>
+                  <span class="rich-dropdown-desc">SMP & Microblading</span>
+                </div>
+              </a>
+
+              <a href="dermatology-services.html" class="rich-dropdown-item">
+                <div class="rich-dropdown-icon">
+                  <i data-lucide="activity" style="width: 18px; height: 18px;"></i>
+                </div>
+                <div class="rich-dropdown-content">
+                  <span class="rich-dropdown-title">Dermatology Services</span>
+                  <span class="rich-dropdown-desc">Skin & Scalp Care</span>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </li>
+        <li class="nav-item luxury-dropdown">
+          <a class="nav-link" href="#">Results <span class="dropdown-caret">▼</span></a>
+          <div class="luxury-dropdown-menu rich-dropdown" style="width: 360px;">
+            <div class="dropdown-grid" style="grid-template-columns: 1fr;">
+
+              <a href="before-after.html" class="rich-dropdown-item">
+                <div class="rich-dropdown-icon">
+                  <i data-lucide="image" style="width: 18px; height: 18px;"></i>
+                </div>
+                <div class="rich-dropdown-content">
+                  <span class="rich-dropdown-title">Before & After</span>
+                  <span class="rich-dropdown-desc">Patient Transformations</span>
+                </div>
+              </a>
+
+              <div style="height: 1px; background: rgba(0, 0, 0, 0.05); margin: 0 16px;"></div>
+
+              <a href="testimonials.html" class="rich-dropdown-item">
+                <div class="rich-dropdown-icon">
+                  <i data-lucide="message-square" style="width: 18px; height: 18px;"></i>
+                </div>
+                <div class="rich-dropdown-content">
+                  <span class="rich-dropdown-title">Testimonials</span>
+                  <span class="rich-dropdown-desc">Patient Reviews & Experiences</span>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="video-gallery.html">Video Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right Side Controls -->
+    <div class="d-none d-lg-flex align-items-center gap-4">
+      <button class="btn btn-gold-outline" data-bs-toggle="modal" data-bs-target="#consultationModal">
+        Book now
+      </button>
+    </div>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="navbar-toggler border-0 p-0 focus-none d-lg-none" type="button" id="mobile-menu-toggle">
+      <i data-lucide="menu" style="width: 24px; height: 24px; color: #0F172A;"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu Backdrop -->
+<div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+
+<!-- Mobile Menu Drawer (Side Panel) -->
+<div class="mobile-nav-panel" id="mobile-nav-panel">
+  <!-- Drawer Header -->
+  <div class="drawer-header d-flex justify-content-between align-items-center w-100">
+    <!-- Logo Emblem -->
+    <a class="d-flex align-items-center gap-2 text-decoration-none" href="index.html" id="drawer-logo-link">
+      <div class="logo-emblem-svg" style="width: 32px; height: 32px;">
+        <svg viewBox="0 0 100 100" class="w-100 h-100">
+          <circle cx="50" cy="50" r="46" fill="#0F172A" stroke="#C8A45D" stroke-width="3" />
+          <circle cx="50" cy="50" r="40" fill="transparent" stroke="#C8A45D" stroke-width="1" stroke-dasharray="3 3" />
+          <text x="28" y="58" fill="#FFFFFF" font-size="24" font-weight="bold" font-family="sans-serif">H</text>
+          <text x="47" y="58" fill="#C8A45D" font-size="26" font-weight="bold" font-family="sans-serif"
+            font-style="italic">S</text>
+          <text x="66" y="58" fill="#FFFFFF" font-size="24" font-weight="bold" font-family="sans-serif">N</text>
+        </svg>
+      </div>
+      <div class="d-flex flex-column text-start">
+        <span class="logo-text-top"
+          style="font-size: 11px; letter-spacing: 0.05em; font-weight: bold; color: var(--color-primary); text-transform: uppercase; line-height: 1.2;">HSN
+          Super Speciality</span>
+        <span class="logo-text-bottom"
+          style="font-size: 7px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); line-height: 1.1;">Hair
+          Transplantation Centre</span>
+      </div>
+    </a>
+    <button class="btn border-0 p-0" id="mobile-menu-close" aria-label="Close menu">
+      <i data-lucide="x" style="width: 24px; height: 24px; color: var(--color-primary);"></i>
+    </button>
+  </div>
+
+  <!-- Drawer Body (Links) -->
+  <div class="drawer-body w-100 flex-grow-1 my-4">
+    <ul class="drawer-menu-list list-unstyled m-0 p-0">
+      <li class="drawer-menu-item">
+        <a class="nav-link" href="index.html">
+          <span class="menu-num">01</span>
+          <span class="menu-text">Home</span>
+          <span class="menu-arrow"></span>
+        </a>
+      </li>
+      <li class="drawer-menu-item">
+        <a class="nav-link" href="about.html">
+          <span class="menu-num">02</span>
+          <span class="menu-text">About Us</span>
+          <span class="menu-arrow"></span>
+        </a>
+      </li>
+      <li class="drawer-menu-item luxury-mobile-dropdown">
+        <a class="nav-link" href="#mobileServicesMenu" data-bs-toggle="collapse" role="button" aria-expanded="false"
+          aria-controls="mobileServicesMenu">
+          <span class="menu-num">03</span>
+          <span class="menu-text">Services</span>
+          <span class="dropdown-caret-mobile" style="margin-left: auto;">▼</span>
+        </a>
+        <ul class="collapse list-unstyled mobile-dropdown-menu" id="mobileServicesMenu">
+          <li><a href="hair-restoration.html" class="mobile-dropdown-item">Hair Restoration</a></li>
+          <li><a href="facial-hair-restoration.html" class="mobile-dropdown-item">Facial Hair Restoration</a></li>
+          <li><a href="scalp-cosmetic-treatments.html" class="mobile-dropdown-item">Scalp & Cosmetic
+              Treatments</a>
+          </li>
+          <li><a href="dermatology-services.html" class="mobile-dropdown-item">Dermatology Services</a></li>
+        </ul>
+      </li>
+      <li class="drawer-menu-item luxury-mobile-dropdown">
+        <a class="nav-link" href="#mobileResultsMenu" data-bs-toggle="collapse" role="button" aria-expanded="false"
+          aria-controls="mobileResultsMenu">
+          <span class="menu-num">04</span>
+          <span class="menu-text">Results</span>
+          <span class="dropdown-caret-mobile" style="margin-left: auto;">▼</span>
+        </a>
+        <ul class="collapse list-unstyled mobile-dropdown-menu" id="mobileResultsMenu">
+          <li><a href="before-after.html" class="mobile-dropdown-item">Before & After</a></li>
+          <li><a href="testimonials.html" class="mobile-dropdown-item">Testimonials</a></li>
+        </ul>
+      </li>
+      <li class="drawer-menu-item">
+        <a class="nav-link" href="video-gallery.html">
+          <span class="menu-num">05</span>
+          <span class="menu-text">Video Gallery</span>
+          <span class="menu-arrow"></span>
+        </a>
+      </li>
+      <li class="drawer-menu-item">
+        <a class="nav-link" href="contact.html">
+          <span class="menu-num">06</span>
+          <span class="menu-text">Contact</span>
+          <span class="menu-arrow"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Drawer Footer -->
+  <div class="drawer-footer w-100 mt-auto pt-3 border-top border-secondary border-opacity-10 text-start">
+    <!-- Secondary CTA Buttons -->
+    <div class="row g-2 mb-4">
+      <div class="col-12">
+        <a href="tel:+919035554728"
+          class="btn btn-outline-dark w-100 py-2 font-mono text-[10px] tracking-widest text-uppercase d-flex align-items-center justify-content-center gap-2"
+          style="border-color: rgba(29, 29, 31, 0.15); font-size: 10px; color: var(--color-primary); background: transparent;">
+          <i data-lucide="phone" style="width: 12px; height: 12px;"></i> Call Now
+        </a>
+      </div>
+    </div>
+
+    <!-- Social Icons + Google Reviews Badge -->
+    <div class="d-flex align-items-center justify-content-between gap-2 mt-2">
+      <!-- Socials -->
+      <div class="d-flex gap-2.5">
+        <a href="https://www.instagram.com/hsnhairtransplant/" target="_blank" rel="noopener noreferrer"
+          class="social-link-drawer" aria-label="Instagram"><i class="bi bi-instagram"
+            style="font-size: 1.1rem;"></i></a>
+        <a href="https://www.facebook.com/people/HSN-Hair-Transplatation/100064108442274/" target="_blank"
+          rel="noopener noreferrer" class="social-link-drawer" aria-label="Facebook"><i class="bi bi-facebook"
+            style="font-size: 1.1rem;"></i></a>
+        <a href="https://www.youtube.com/channel/UCvPAg814mn3C3P5ETNjpihw" target="_blank" rel="noopener noreferrer"
+          class="social-link-drawer" aria-label="YouTube"><i class="bi bi-youtube" style="font-size: 1.1rem;"></i></a>
+      </div>
+
+      <!-- Google Reviews Badge -->
+      <a href="testimonials.html"
+        class="google-reviews-badge-drawer d-flex align-items-center gap-2 text-decoration-none">
+        <span class="font-mono text-[9px] text-muted tracking-wide text-uppercase">Google Reviews</span>
+        <div class="d-flex gap-0.5 text-secondary">
+          <i data-lucide="star" style="width: 10px; height: 10px; fill: var(--color-secondary);"></i>
+          <i data-lucide="star" style="width: 10px; height: 10px; fill: var(--color-secondary);"></i>
+          <i data-lucide="star" style="width: 10px; height: 10px; fill: var(--color-secondary);"></i>
+          <i data-lucide="star" style="width: 10px; height: 10px; fill: var(--color-secondary);"></i>
+          <i data-lucide="star" style="width: 10px; height: 10px; fill: var(--color-secondary);"></i>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

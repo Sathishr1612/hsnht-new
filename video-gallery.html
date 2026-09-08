@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Watch real patient transformations, treatment walkthroughs, and expert insights from HSN Super Speciality Hair Transplantation Centre. Video gallery featuring hair restoration results across Bangalore, Chennai, Coimbatore & Hyderabad." />
+    <title>Video Gallery | HSN Super Speciality Hair Transplantation Centre</title>
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom Style sheets -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <style>
+        /* ===================================
+           VIDEO GALLERY — PAGE-SPECIFIC STYLES
+           =================================== */
+
+        .about-hero {
+            min-height: 580px !important;
+            background-position: right top 85px !important;
+            background-size: cover !important;
+            position: relative;
+        }
+
+        @media (max-width: 991.98px) {
+            .about-hero {
+                min-height: 480px !important;
+                background-position: 85% top 80px !important;
+                background-size: cover !important;
+            }
+
+            #about-hero::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, rgba(248, 247, 244, 0.90) 0%, rgba(248, 247, 244, 0.65) 50%, rgba(248, 247, 244, 0.92) 100%) !important;
+                z-index: 1;
+            }
+
+            #about-hero .about-hero-container {
+                position: relative;
+                z-index: 3;
+            }
+
+            #about-hero .about-hero-title {
+                color: #1D1D1F !important;
+                text-shadow: none !important;
+            }
+
+            #about-hero .about-hero-title-accent {
+                color: #C9A46A !important;
+                text-shadow: none !important;
+            }
+
+            #about-hero .about-hero-desc {
+                color: #444444 !important;
+                text-shadow: none !important;
+            }
+        }
+
+        .vg-section {
+            background-color: var(--color-bg-main);
+            padding: 80px 0 100px;
+        }
+
+        /* Grid */
+        .vg-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        /* Card */
+        .vg-card {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            transition: transform 0.35s cubic-bezier(.4, 0, .2, 1),
+                box-shadow 0.35s cubic-bezier(.4, 0, .2, 1);
+            cursor: pointer;
+        }
+
+        .vg-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Thumbnail wrapper — 16:9 for all */
+        .vg-thumb {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            overflow: hidden;
+            background: #111;
+        }
+
+        .vg-thumb img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(.4, 0, .2, 1),
+                filter 0.4s ease;
+        }
+
+        .vg-card:hover .vg-thumb img {
+            transform: scale(1.06);
+            filter: brightness(0.75);
+        }
+
+        /* Overlay gradient */
+        .vg-thumb::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.45) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Play button */
+        .vg-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            z-index: 2;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(201, 164, 106, 0.92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(201, 164, 106, 0.35);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .vg-play::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent #fff;
+            margin-left: 3px;
+        }
+
+        .vg-card:hover .vg-play {
+            transform: translate(-50%, -50%) scale(1.12);
+            background: rgba(201, 164, 106, 1);
+        }
+
+        /* Shorts badge */
+        .vg-badge-short {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 3;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(255, 0, 0, 0.85);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-family: var(--font-sans);
+            backdrop-filter: blur(4px);
+        }
+
+        /* Video lightbox modal */
+        .vg-modal .modal-content {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .vg-modal .modal-body {
+            padding: 0;
+            position: relative;
+        }
+
+        .vg-modal .vg-iframe-wrap {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .vg-modal .vg-iframe-wrap.is-short {
+            max-width: 380px;
+            margin: 0 auto;
+            padding-bottom: 0;
+            aspect-ratio: 9/16;
+        }
+
+        .vg-modal .vg-iframe-wrap iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .vg-modal .vg-iframe-wrap.is-short iframe {
+            position: static;
+            width: 100%;
+            height: 100%;
+        }
+
+        .vg-modal .btn-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            filter: invert(1);
+            opacity: 0.8;
+            z-index: 10;
+        }
+
+        .vg-modal .btn-close:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 991.98px) {
+            .vg-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .vg-section {
+                padding: 60px 0 80px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .vg-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .vg-section {
+                padding: 40px 0 60px;
+            }
+
+            .vg-play {
+                width: 50px;
+                height: 50px;
+            }
+
+            .vg-play::before {
+                border-width: 8px 0 8px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Component (loaded dynamically) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="about-hero" id="about-hero"
+        style="background-image: url('assets/images/hsn-images/hsn-hair-restore-videos.png'); background-position: right top 50px; background-size: cover; min-height: 580px;">
+        <div class="about-hero-container">
+            <div class="about-hero-content mt-5">
+                <!-- <span class="about-hero-label section-subtitle">HSN SUPER SPECIALITY</span> -->
+
+                <h1 class="about-hero-title">
+                    Video<br>
+                    <span class="about-hero-title-accent">Gallery</span>
+                </h1>
+
+                <p class="about-hero-desc">
+                    Watch real patient transformations, treatment walkthroughs, and expert insights from our
+                    specialists.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         VIDEO GALLERY SECTION
+         ========================================= -->
+    <section class="vg-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="editorial-label section-subtitle">OUR VIDEOS</span>
+                <h2 class="editorial-title" style="font-family: var(--font-sans); font-size: 46px; font-weight: 700;">
+                    Patient <span class="hr-highlight">Transformations</span>
+                </h2>
+                <p class="editorial-desc mx-auto" style="max-width: 660px; margin-top: 16px;">
+                    Explore our collection of real patient journeys, treatment procedures, and expert explanations from
+                    HSN Super Speciality Hair Transplantation Centre.
+                </p>
+            </div>
+
+            <div class="vg-grid" id="videoGalleryGrid">
+
+                <!-- Video 1 — Short (Man with text) -->
+                <div class="vg-card" data-video-id="ZKUVlj4ul6Y" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/ZKUVlj4ul6Y">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/ZKUVlj4ul6Y/hqdefault.jpg" alt="HSN Hair Transplant Video"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 2 — Regular (Man eating food 1) -->
+                <div class="vg-card" data-video-id="1VXqMM49gGU" data-video-type="regular"
+                    data-video-url="https://youtu.be/1VXqMM49gGU">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/1VXqMM49gGU/hqdefault.jpg" alt="HSN Patient Transformation"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                    </div>
+                </div>
+
+                <!-- Video 3 — Short (Woman in yellow 1) -->
+                <div class="vg-card" data-video-id="VTU9QojHmBw" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/VTU9QojHmBw">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/VTU9QojHmBw/hqdefault.jpg" alt="HSN Patient Experience"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 4 — Short (Hair Cartoon animation) -->
+                <div class="vg-card" data-video-id="9zOtiriU3ew" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/9zOtiriU3ew">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/9zOtiriU3ew/hqdefault.jpg" alt="Hair Loss Solutions"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 5 — Regular (Doctor in yellow shirt) -->
+                <div class="vg-card" data-video-id="qPFei2WC9Wk" data-video-type="regular"
+                    data-video-url="https://youtu.be/qPFei2WC9Wk">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/qPFei2WC9Wk/hqdefault.jpg" alt="Doctor Consultation"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                    </div>
+                </div>
+
+                <!-- Video 6 — Short (Patient in suit) -->
+                <div class="vg-card" data-video-id="ceJQlF3D0uY" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/ceJQlF3D0uY">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/ceJQlF3D0uY/hqdefault.jpg" alt="Patient Review"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 7 — Regular (Man eating food 2) -->
+                <div class="vg-card" data-video-id="WkC4uFrehdg" data-video-type="regular"
+                    data-video-url="https://youtu.be/WkC4uFrehdg">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/WkC4uFrehdg/hqdefault.jpg" alt="Hair Restoration Journey"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                    </div>
+                </div>
+
+                <!-- Video 8 — Short (Woman in yellow 2) -->
+                <div class="vg-card" data-video-id="73a26lImNt4" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/73a26lImNt4">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/73a26lImNt4/hqdefault.jpg" alt="Patient Testimonial"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 9 — Regular (Beard transplant) -->
+                <div class="vg-card" data-video-id="88yPnDwt02I" data-video-type="regular"
+                    data-video-url="https://youtu.be/88yPnDwt02I">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/88yPnDwt02I/hqdefault.jpg" alt="Beard Hair Restoration"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                    </div>
+                </div>
+
+                <!-- Video 10 — Short (Cartoon illustration) -->
+                <div class="vg-card" data-video-id="HoWFxmb9e5o" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/HoWFxmb9e5o">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/HoWFxmb9e5o/hqdefault.jpg" alt="Hair Growth Insights"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 11 — Regular (Clinic overview) -->
+                <div class="vg-card" data-video-id="8vP27p53YJw" data-video-type="regular"
+                    data-video-url="https://youtu.be/8vP27p53YJw">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/8vP27p53YJw/hqdefault.jpg" alt="HSN Clinic Overview"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                    </div>
+                </div>
+
+                <!-- Video 12 — Short (Doctor consultation) -->
+                <div class="vg-card" data-video-id="zuBzZHY0Od0" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/zuBzZHY0Od0">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/zuBzZHY0Od0/hqdefault.jpg" alt="Expert Consultation"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 14 — Short (Hair procedure) -->
+                <div class="vg-card" data-video-id="AwNuiAOxSoo" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/AwNuiAOxSoo">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/AwNuiAOxSoo/hqdefault.jpg" alt="Treatment Procedure"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 15 — Regular (Treatment result) -->
+                <div class="vg-card" data-video-id="kyOYbMhQLnE" data-video-type="regular"
+                    data-video-url="https://youtu.be/kyOYbMhQLnE">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/kyOYbMhQLnE/hqdefault.jpg" alt="Hair Transplant Results"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                    </div>
+                </div>
+
+                <!-- Video 16 — Short (Short transformation) -->
+                <div class="vg-card" data-video-id="eyWlsxFTZ3A" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/eyWlsxFTZ3A">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/eyWlsxFTZ3A/hqdefault.jpg" alt="Real Transformation"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 17 — Regular (Full review) -->
+                <div class="vg-card" data-video-id="HCyVuZxSXLs" data-video-type="regular"
+                    data-video-url="https://youtu.be/HCyVuZxSXLs">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/HCyVuZxSXLs/hqdefault.jpg" alt="Full Patient Story"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                    </div>
+                </div>
+
+                <!-- Video 18 — Short (Beard/hair short) -->
+                <div class="vg-card" data-video-id="p-j7wTq5hNE" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/p-j7wTq5hNE">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/p-j7wTq5hNE/hqdefault.jpg" alt="Beard Hair Results"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 19 — Short (Scalp treatment) -->
+                <div class="vg-card" data-video-id="PI_iUADAEUs" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/PI_iUADAEUs">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/PI_iUADAEUs/hqdefault.jpg" alt="Scalp Aesthetics"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+                <!-- Video 20 — Short (Graft technique) -->
+                <div class="vg-card" data-video-id="GynwZoB2_fM" data-video-type="short"
+                    data-video-url="https://youtube.com/shorts/GynwZoB2_fM">
+                    <div class="vg-thumb">
+                        <img src="https://img.youtube.com/vi/GynwZoB2_fM/hqdefault.jpg" alt="Advanced Graft Technique"
+                            loading="lazy" />
+                        <div class="vg-play"></div>
+                        <span class="vg-badge-short"><i class="bi bi-lightning-fill"></i> Short</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Lightbox Modal -->
+    <div class="modal fade vg-modal" id="vgVideoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="vg-iframe-wrap" id="vgIframeWrap">
+                        <iframe id="vgIframe" src="" title="HSN Video Player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="text-center pt-3">
+                        <a id="vgYoutubeLink" href="#" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline-light rounded-pill px-4 py-2"
+                            style="font-size: 13px; font-weight: 500; background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); color: #fff;">
+                            <i class="bi bi-youtube text-danger me-2" style="font-size: 16px;"></i> Watch Video on
+                            YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap 5 JS Bundle (with Popper) CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Lucide Vector Icons Engine CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Component Loader -->
+    <script src="assets/js/load-components.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Video Gallery Script -->
+    <script>
+        (function () {
+            'use strict';
+
+            var modalEl = document.getElementById('vgVideoModal');
+            var iframe = document.getElementById('vgIframe');
+            var iframeWrap = document.getElementById('vgIframeWrap');
+            var youtubeLink = document.getElementById('vgYoutubeLink');
+
+            // Attach click handlers to all video cards
+            var cards = document.querySelectorAll('.vg-card');
+            cards.forEach(function (card) {
+                card.addEventListener('click', function () {
+                    var videoId = card.getAttribute('data-video-id');
+                    var videoType = card.getAttribute('data-video-type');
+                    var videoUrl = card.getAttribute('data-video-url');
+
+                    // Build youtube-nocookie embed URL with origin
+                    var originParam = encodeURIComponent(window.location.origin || '');
+                    var embedUrl = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1&enablejsapi=1' + (originParam ? '&origin=' + originParam : '');
+
+                    // Set direct YouTube link
+                    if (youtubeLink) {
+                        youtubeLink.href = videoUrl || ('https://www.youtube.com/watch?v=' + videoId);
+                    }
+
+                    // Adjust aspect ratio for shorts
+                    if (videoType === 'short') {
+                        iframeWrap.classList.add('is-short');
+                    } else {
+                        iframeWrap.classList.remove('is-short');
+                    }
+
+                    iframe.src = embedUrl;
+
+                    // Open modal
+                    var bsModal = new bootstrap.Modal(modalEl);
+                    bsModal.show();
+                });
+            });
+
+            // Stop video when modal closes
+            modalEl.addEventListener('hidden.bs.modal', function () {
+                iframe.src = '';
+                iframeWrap.classList.remove('is-short');
+            });
+
+            // Scroll reveal animation for cards
+            var observer = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry, index) {
+                        if (entry.isIntersecting) {
+                            // Stagger the animation
+                            var delay = Array.prototype.indexOf.call(cards, entry.target) % 3 * 100;
+                            setTimeout(function () {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }, delay);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+
+            cards.forEach(function (card) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
