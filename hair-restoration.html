@@ -24,13 +24,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
     <style>
-        /* Mobile: center image properly so face is clearly visible and bullets are readable */
-        @media (max-width: 768px) {
+        /* Mobile: use hair-restoration-mobile.png banner image with crisp contrast */
+        @media (max-width: 991.98px) {
             #hr-hero::before {
-                background-image: url('assets/images/hsn-images/hair-restore.png') !important;
-                background-position: 68% top 80px !important;
+                background-image: url('assets/images/hsn-images/hair-restoration-mobile.png') !important;
+                background-position: center top !important;
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
                 -webkit-mask-image: none !important;
                 mask-image: none !important;
+            }
+
+            #hr-hero::after {
+                content: '' !important;
+                position: absolute !important;
+                inset: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                left: 0 !important;
+                top: 0 !important;
+                background: linear-gradient(180deg, rgba(12, 15, 20, 0.45) 0%, rgba(12, 15, 20, 0.2) 35%, rgba(12, 15, 20, 0.9) 100%) !important;
+                z-index: 2 !important;
+            }
+
+            #hr-hero .hr-hero-container {
+                position: relative !important;
+                z-index: 3 !important;
+            }
+
+            #hr-hero .hr-hero-title {
+                color: #FFFFFF !important;
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
             }
 
             #hr-hero .hr-highlight-list li {
