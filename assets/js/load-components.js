@@ -57,7 +57,7 @@
       }
 
       // For results sub-pages, mark Results dropdown as active
-      var resultsPages = ['before-after.html', 'testimonials.html', 'video-gallery.html'];
+      var resultsPages = ['before-after.html', 'testimonials.html'];
       if (href === '#' && link.textContent.trim().startsWith('Results') && resultsPages.indexOf(currentPage) !== -1) {
         link.classList.add('active');
       }

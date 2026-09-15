@@ -3215,19 +3215,21 @@ h6 {
 .cta-banner-bg-img {
   position: absolute;
   inset: 0;
-  background-image: url('../images/cta-luxury-clinic-banner.jpg');
+  background-image: url('../images/hsn-images/cta-footer-hsn.png');
   background-size: cover;
-  background-position: center right;
-  opacity: 0.52;
-  filter: brightness(0.9) contrast(1.05);
+  background-position: 84% 30%;
+  opacity: 0.78;
+  filter: brightness(0.70) contrast(1.22) saturate(0.85);
   pointer-events: none;
 }
 
 .cta-banner-section .cta-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(10, 13, 20, 0.94) 0%, rgba(10, 13, 20, 0.85) 45%, rgba(10, 13, 20, 0.62) 100%),
-    linear-gradient(180deg, rgba(10, 13, 20, 0.6) 0%, rgba(10, 13, 20, 0.25) 50%, rgba(10, 13, 20, 0.75) 100%);
+  background:
+    radial-gradient(circle at 42% 40%, rgba(201, 164, 106, 0.08) 0%, rgba(13, 16, 23, 0.65) 50%, rgba(13, 16, 23, 0.95) 100%),
+    linear-gradient(90deg, rgba(13, 16, 23, 0.95) 0%, rgba(13, 16, 23, 0.78) 35%, rgba(13, 16, 23, 0.45) 52%, rgba(13, 16, 23, 0.92) 100%),
+    linear-gradient(180deg, rgba(13, 16, 23, 0.75) 0%, transparent 40%, rgba(13, 16, 23, 0.90) 100%);
   pointer-events: none;
 }
 
@@ -3373,6 +3375,10 @@ h6 {
     padding: 70px 0 !important;
   }
 
+  .cta-banner-bg-img {
+    background-position: 84% 25%;
+  }
+
   .cta-modern-title {
     font-size: 2.2rem;
   }
@@ -3413,8 +3419,8 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Extremely soft, seamless gradient matching luxury editorial styles */
-  background: linear-gradient(90deg, #F8F7F4 0%, rgba(248, 247, 244, 0.98) 25%, rgba(244, 241, 235, 0.8) 50%, rgba(244, 241, 235, 0) 100%);
+  /* Warm cream gradient — matches hr-hero banner background */
+  background: linear-gradient(90deg, #EDE8DF 0%, rgba(237, 232, 223, 0.98) 25%, rgba(232, 224, 210, 0.8) 50%, rgba(232, 224, 210, 0) 100%);
   z-index: 1;
 }
 
@@ -5359,6 +5365,79 @@ h6 {
   transform: translateY(0);
 }
 
+/* ── Premium "Explore" pill button on service cards ── */
+.luxury-service-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 10px 22px;
+  border-radius: 100px;
+  background: rgba(200, 164, 93, 0.12);
+  border: 1.5px solid rgba(200, 164, 93, 0.75);
+  color: #C8A45D;
+  font-family: var(--font-mono, 'Courier New', monospace);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 0 0 rgba(200, 164, 93, 0);
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.35s ease 0.08s,
+    transform 0.35s ease 0.08s,
+    background 0.28s ease,
+    color 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.luxury-service-btn svg,
+.luxury-service-btn i {
+  width: 13px !important;
+  height: 13px !important;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+/* Reveal on card hover */
+.luxury-service-item:hover .luxury-service-btn {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Fill gold on card hover */
+.luxury-service-item:hover .luxury-service-btn {
+  background: #C8A45D;
+  color: #1a1005;
+  border-color: #C8A45D;
+  box-shadow: 0 4px 18px rgba(200, 164, 93, 0.35);
+}
+
+/* Arrow nudge on direct hover of button */
+a.luxury-service-item:hover .luxury-service-btn svg,
+a.luxury-service-item:hover .luxury-service-btn i {
+  transform: translateX(3px);
+}
+
+/* Ensure <a> card wrapper doesn't break layout */
+a.luxury-service-item {
+  display: block;
+  text-decoration: none !important;
+  color: inherit;
+}
+
+
 @media (max-width: 767.98px) {
   .luxury-service-item {
     height: 320px;
@@ -5750,7 +5829,7 @@ h6 {
   min-height: 600px;
   display: flex;
   align-items: center;
-  background-color: #F8F7F4;
+  background: linear-gradient(135deg, #EDE8DF 0%, #E8E0D2 40%, #EAE2D6 100%);
   overflow: hidden;
   /* No padding-top here — section fills flush to navbar, no gap */
 }
@@ -5768,9 +5847,9 @@ h6 {
   /* Shift image down by navbar height (80px) so person's head shows below navbar */
   background-position: right top 80px;
   background-repeat: no-repeat;
-  /* Fades the image out on the left side so it blends perfectly into the solid background */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 35%, black 65%, black 100%);
-  mask-image: linear-gradient(to right, transparent 0%, transparent 35%, black 65%, black 100%);
+  /* Fades the image out on the left side so it blends perfectly into the warm cream background */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 30%, black 60%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, transparent 30%, black 60%, black 100%);
   z-index: 1;
 }
 
@@ -5782,7 +5861,7 @@ h6 {
 }
 
 .scalp-cosmetic-hero::before {
-  background-image: url('../images/hsn-images/video-gallery.png') !important;
+  background-image: url('../images/hsn-images/scalp-aesthetics-baner.png') !important;
   background-position: center top 80px !important;
   background-size: cover;
 }
@@ -5984,7 +6063,8 @@ h6 {
 
   #hr-hero .hr-highlight-list li {
     color: #ffffff !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
+    font-size: 1.15rem !important;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.90), 0 2px 12px rgba(0, 0, 0, 0.70) !important;
   }
 }
@@ -6656,8 +6736,9 @@ h6 {
   align-items: center;
   justify-content: center;
   padding: 18px 40px;
-  border: 1px solid #1D1D1F;
-  color: #1D1D1F;
+  border: 1.5px solid rgba(201, 164, 106, 0.7);
+  color: #FFFFFF;
+  background: rgba(201, 164, 106, 0.12);
   font-family: var(--font-sans);
   font-size: 15px !important;
   font-weight: 600 !important;
@@ -6665,12 +6746,15 @@ h6 {
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   transition: all 0.3s ease;
 }
 
 .hr-btn-outline:hover {
-  background-color: #1D1D1F;
-  color: #FFFFFF;
+  background-color: var(--color-secondary, #C9A46A);
+  color: #121214 !important;
+  border-color: var(--color-secondary, #C9A46A);
 }
 
 
@@ -6790,8 +6874,10 @@ h6 {
 
   .hr-cta-buttons,
   .hr-hero-actions {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
 
   .hr-btn-white,
@@ -6799,6 +6885,7 @@ h6 {
   .hr-btn-primary,
   .hr-btn-secondary {
     width: 100%;
+    margin-left: 0 !important;
     text-align: center;
     justify-content: center;
   }
@@ -8019,5 +8106,264 @@ a.contact-info-val:hover {
 
   .journey-marker {
     margin-bottom: 0 !important;
+  }
+}
+
+/* ===================================
+ VIDEO GALLERY — PAGE-SPECIFIC STYLES
+=================================== */
+
+.about-hero {
+  min-height: 580px !important;
+  background-position: right top 85px !important;
+  background-size: cover !important;
+  position: relative;
+}
+
+@media (max-width: 991.98px) {
+  .about-hero, #about-hero {
+    min-height: 480px !important;
+    background-image: url('../images/hsn-images/hair-restoration-service-5.png') !important;
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+
+  #about-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.70) 50%, rgba(15, 23, 42, 0.90) 100%) !important;
+    z-index: 1;
+  }
+
+  #about-hero .about-hero-container {
+    position: relative;
+    z-index: 3;
+    padding-top: 25px !important;
+  }
+
+  #about-hero .about-hero-title {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    font-size: 2rem !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75) !important;
+  }
+
+  #about-hero .about-hero-title-accent {
+    color: #C9A46A !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75) !important;
+  }
+
+  #about-hero .about-hero-desc {
+    color: rgba(255, 255, 255, 0.92) !important;
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.75) !important;
+  }
+}
+
+.vg-section {
+  background-color: var(--color-bg-main);
+  padding: 80px 0 100px;
+}
+
+/* Grid */
+.vg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Card */
+.vg-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s cubic-bezier(.4, 0, .2, 1),
+    box-shadow 0.35s cubic-bezier(.4, 0, .2, 1);
+  cursor: pointer;
+}
+
+.vg-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+/* Thumbnail wrapper — 16:9 for all */
+.vg-thumb {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  overflow: hidden;
+  background: #111;
+}
+
+.vg-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(.4, 0, .2, 1),
+    filter 0.4s ease;
+}
+
+.vg-card:hover .vg-thumb img {
+  transform: scale(1.06);
+  filter: brightness(0.75);
+}
+
+/* Overlay gradient */
+.vg-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.45) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Play button */
+.vg-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(201, 164, 106, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(201, 164, 106, 0.35);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.vg-play::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 3px;
+}
+
+.vg-card:hover .vg-play {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: rgba(201, 164, 106, 1);
+}
+
+/* Shorts badge */
+.vg-badge-short {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 0, 0, 0.85);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  backdrop-filter: blur(4px);
+}
+
+/* Video lightbox modal */
+.vg-modal .modal-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.vg-modal .modal-body {
+  padding: 0;
+  position: relative;
+}
+
+.vg-modal .vg-iframe-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.vg-modal .vg-iframe-wrap.is-short {
+  max-width: 380px;
+  margin: 0 auto;
+  padding-bottom: 0;
+  aspect-ratio: 9/16;
+}
+
+.vg-modal .vg-iframe-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.vg-modal .vg-iframe-wrap.is-short iframe {
+  position: static;
+  width: 100%;
+  height: 100%;
+}
+
+.vg-modal .btn-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  filter: invert(1);
+  opacity: 0.8;
+  z-index: 10;
+}
+
+.vg-modal .btn-close:hover {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .vg-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .vg-section {
+    padding: 60px 0 80px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .vg-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .vg-section {
+    padding: 40px 0 60px;
+  }
+
+  .vg-play {
+    width: 50px;
+    height: 50px;
+  }
+
+  .vg-play::before {
+    border-width: 8px 0 8px 14px;
   }
 }

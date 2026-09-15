@@ -690,8 +690,8 @@ function initLuxuryGallery() {
   let velocity = 0;
   let momentumFrameId;
 
-  // Auto scroll logic (Pixels per frame, adjusted speed for a smoother & calmer look)
-  const autoScrollSpeed = 1.2;
+  // Auto scroll logic (Pixels per frame, tuned speed for a smooth & engaging continuous marquee)
+  const autoScrollSpeed = 2.35;
   let currentScroll = 0; // Use a float to accumulate scroll precisely
 
   // Initialize currentScroll slightly after layout

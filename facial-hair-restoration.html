@@ -23,6 +23,43 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <style>
+        @media (max-width: 991.98px) {
+            .facial-hero, #hr-hero.facial-hero {
+                min-height: 480px !important;
+                background-image: url('assets/images/hsn-images/eye-brow-restoration-service.png') !important;
+                background-position: center center !important;
+                background-size: cover !important;
+            }
+
+            .facial-hero::before, #hr-hero.facial-hero::before {
+                content: '' !important;
+                position: absolute !important;
+                inset: 0 !important;
+                background: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.70) 50%, rgba(15, 23, 42, 0.90) 100%) !important;
+                z-index: 1 !important;
+            }
+
+            .facial-hero .hr-hero-container {
+                position: relative !important;
+                z-index: 3 !important;
+                padding-top: 25px !important;
+            }
+
+            .facial-hero .hr-hero-title {
+                color: #FFFFFF !important;
+                font-weight: 700 !important;
+                font-size: 2rem !important;
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75) !important;
+            }
+
+            .facial-hero .hr-highlight {
+                color: #C9A46A !important;
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75) !important;
+            }
+        }
+    </style>
 </head>
 
 <body class="hr-page">
