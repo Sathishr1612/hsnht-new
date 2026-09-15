@@ -1,61 +1,71 @@
-/* animations.js - Custom lightweight scroll reveal and cinematic transitions */
+/* ==========================================================================
+   animations.js - Masterclass Scroll Reveal & Entrance Animation Engine
+   ========================================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-  initScrollAnimations();
-});
+(function () {
+  let activeObserver = null;
 
-/* Simple intersection observer to add scroll slide/fade classes */
-function initScrollAnimations() {
-  const animatedElements = document.querySelectorAll("[data-reveal]");
-  if (!animatedElements.length) return;
+  function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll("[data-reveal]");
+    if (!animatedElements.length) return;
 
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const animationType = el.getAttribute("data-reveal") || "fade-up";
-        
-        // Map data attribute to css style/transition triggers
-        applyRevealStyle(el, animationType);
-        
-        observer.unobserve(el);
+    if (!("IntersectionObserver" in window)) {
+      // Fallback for browsers without IntersectionObserver
+      animatedElements.forEach(el => el.classList.add("is-revealed"));
+      return;
+    }
+
+    if (!activeObserver) {
+      activeObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            
+            // Check custom delay attributes if inline style not already present
+            const delay = el.getAttribute("data-delay") || el.getAttribute("data-reveal-delay");
+            if (delay && !el.style.transitionDelay) {
+              el.style.transitionDelay = delay.endsWith("ms") || delay.endsWith("s") ? delay : delay + "ms";
+            }
+
+            el.classList.add("is-revealed");
+            observer.unobserve(el);
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.05,
+        rootMargin: "0px 0px -20px 0px"
+      });
+    }
+
+    animatedElements.forEach(el => {
+      // If already revealed or visible near top, trigger reveal immediately
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const delay = el.getAttribute("data-delay") || el.getAttribute("data-reveal-delay");
+        if (delay && !el.style.transitionDelay) {
+          el.style.transitionDelay = delay.endsWith("ms") || delay.endsWith("s") ? delay : delay + "ms";
+        }
+        el.classList.add("is-revealed");
+      } else {
+        activeObserver.observe(el);
       }
     });
-  }, {
-    root: null,
-    threshold: 0.15,
-    rootMargin: "0px"
-  });
-
-  // Setup initial off-screen states
-  animatedElements.forEach(el => {
-    setupInitialState(el);
-    revealObserver.observe(el);
-  });
-}
-
-function setupInitialState(el) {
-  const type = el.getAttribute("data-reveal");
-  el.style.transition = "opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
-  
-  if (type === "fade-up") {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(40px)";
-  } else if (type === "fade-in") {
-    el.style.opacity = "0";
-  } else if (type === "slide-left") {
-    el.style.opacity = "0";
-    el.style.transform = "translateX(50px)";
-  } else if (type === "slide-right") {
-    el.style.opacity = "0";
-    el.style.transform = "translateX(-50px)";
-  } else if (type === "zoom-in") {
-    el.style.opacity = "0";
-    el.style.transform = "scale(0.95)";
   }
-}
 
-function applyRevealStyle(el, type) {
-  el.style.opacity = "1";
-  el.style.transform = "translate(0, 0) scale(1)";
-}
+  // Global handle for dynamic re-initialization
+  window.initScrollAnimations = initScrollAnimations;
+  window.reinitScrollAnimations = initScrollAnimations;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initScrollAnimations();
+    
+    // Re-scan after short delay to capture dynamically rendered components (Header, Footer, Modals)
+    setTimeout(initScrollAnimations, 200);
+    setTimeout(initScrollAnimations, 600);
+    setTimeout(initScrollAnimations, 1200);
+  });
+
+  // Listen to custom component loaded events from load-components.js
+  document.addEventListener("componentsLoaded", initScrollAnimations);
+})();

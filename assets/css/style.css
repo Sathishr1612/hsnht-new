@@ -6757,6 +6757,24 @@ a.luxury-service-item {
   border-color: var(--color-secondary, #C9A46A);
 }
 
+/* Hero Banners: Hide Call Now button on Desktop (>991px), display ONLY on Mobile / Tablet (<=991px) */
+@media (min-width: 992px) {
+  .hr-hero-actions .hr-btn-outline,
+  .hr-hero .hr-btn-outline {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hr-hero-actions .hr-btn-outline,
+  .hr-hero .hr-btn-outline {
+    display: inline-flex !important;
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
 
 @media (max-width: 1024px) {
   .hr-hero {
@@ -7838,8 +7856,8 @@ a.contact-info-val:hover {
 
 @media (max-width: 767.98px) {
   .hsn-compact-footer {
-    padding-top: 2.25rem !important;
-    padding-bottom: 1.75rem !important;
+    padding-top: 1.75rem !important;
+    padding-bottom: 0.75rem !important;
   }
 
   .hsn-footer-logo-wrap {
@@ -7873,7 +7891,9 @@ a.contact-info-val:hover {
 
   .hsn-footer-bottom {
     text-align: center;
-    gap: 12px !important;
+    gap: 6px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .hsn-footer-bottom .d-flex {
@@ -8367,3 +8387,56 @@ a.contact-info-val:hover {
     border-width: 8px 0 8px 14px;
   }
 }
+
+/* ==========================================================================
+   Masterclass Scroll Reveal & Entrance Animations System
+   ========================================================================== */
+[data-reveal] {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal="fade-up"] {
+  transform: translateY(45px);
+}
+
+[data-reveal="fade-down"] {
+  transform: translateY(-45px);
+}
+
+[data-reveal="fade-in"] {
+  transform: translateY(0);
+}
+
+[data-reveal="slide-left"] {
+  transform: translateX(60px);
+}
+
+[data-reveal="slide-right"] {
+  transform: translateX(-60px);
+}
+
+[data-reveal="zoom-in"] {
+  transform: scale(0.9);
+}
+
+[data-reveal="zoom-out"] {
+  transform: scale(1.08);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* Stagger Delays */
+[data-delay="50"], [data-reveal-delay="50"] { transition-delay: 50ms !important; }
+[data-delay="100"], [data-reveal-delay="100"] { transition-delay: 100ms !important; }
+[data-delay="150"], [data-reveal-delay="150"] { transition-delay: 150ms !important; }
+[data-delay="200"], [data-reveal-delay="200"] { transition-delay: 200ms !important; }
+[data-delay="250"], [data-reveal-delay="250"] { transition-delay: 250ms !important; }
+[data-delay="300"], [data-reveal-delay="300"] { transition-delay: 300ms !important; }
+[data-delay="350"], [data-reveal-delay="350"] { transition-delay: 350ms !important; }
+[data-delay="400"], [data-reveal-delay="400"] { transition-delay: 400ms !important; }
+[data-delay="500"], [data-reveal-delay="500"] { transition-delay: 500ms !important; }

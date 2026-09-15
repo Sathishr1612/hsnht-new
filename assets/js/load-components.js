@@ -111,6 +111,10 @@
 
     // 7. Dispatch custom event for any page-specific scripts to hook into
     document.dispatchEvent(new CustomEvent('components-loaded'));
+    document.dispatchEvent(new CustomEvent('componentsLoaded'));
+    if (typeof window.initScrollAnimations === 'function') {
+      window.initScrollAnimations();
+    }
 
     // 8. If URL contains a hash, ensure smooth scroll after DOM is populated
     if (window.location.hash) {
