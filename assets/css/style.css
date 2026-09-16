@@ -2872,32 +2872,33 @@ h6 {
 .marquee-container {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y pinch-zoom;
   padding: 2rem 0;
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
+.marquee-container::-webkit-scrollbar {
+  display: none;
+}
+
+.marquee-container.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
 .marquee-content {
   display: flex;
   width: max-content;
-  animation: scrollMarquee 40s linear infinite;
   gap: 2rem;
   padding-left: 2rem;
-}
-
-.marquee-container:hover .marquee-content {
-  animation-play-state: paused;
-}
-
-@keyframes scrollMarquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(calc(-50% - 1rem));
-  }
 }
 
 .luxury-review-card {

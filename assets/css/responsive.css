@@ -728,6 +728,28 @@
   .clinic-actions .btn {
     font-size: 11.5px !important;
     padding: 0.6rem 0.8rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .map-card {
+    padding: 22px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .map-card .d-flex.mt-auto {
+    gap: 8px !important;
+  }
+
+  .map-card .d-flex.mt-auto .btn {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    margin-bottom: 0 !important;
+    padding: 0.65rem 0.5rem !important;
+    font-size: 11px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
   }
 }
 
@@ -917,5 +939,118 @@
   .hsn-feature-title,
   .hsn-feature-card h6 {
     font-size: 12.5px !important;
+  }
+}
+
+/* ==========================================================================
+   BEFORE & AFTER MARQUEE SECTION RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  #before-after {
+    padding-top: 60px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .ba-marquee-container::before,
+  .ba-marquee-container::after {
+    width: 60px !important;
+  }
+
+  .ba-marquee-track {
+    gap: 1.5rem !important;
+    padding: 0.5rem 1rem 2rem 1rem !important;
+  }
+
+  .ba-card {
+    min-width: 260px !important;
+    width: 260px !important;
+    border-radius: 14px !important;
+  }
+
+  .ba-img-container {
+    border-radius: 14px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #before-after {
+    padding-top: 48px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .ba-marquee-container {
+    padding: 0.25rem 0 !important;
+  }
+
+  /* Reduce gradient mask so cards in view are fully visible and crisp */
+  .ba-marquee-container::before,
+  .ba-marquee-container::after {
+    width: 28px !important;
+  }
+
+  .ba-marquee-track {
+    gap: 14px !important;
+    padding: 0.25rem 0.75rem 1.25rem 0.75rem !important;
+  }
+
+  /* Mobile card size: perfectly proportioned so 1 full card + next card peek is visible */
+  .ba-card {
+    min-width: clamp(210px, 60vw, 240px) !important;
+    width: clamp(210px, 60vw, 240px) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .ba-img-container {
+    border-radius: 14px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #before-after {
+    padding-top: 38px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .ba-marquee-container::before,
+  .ba-marquee-container::after {
+    width: 18px !important;
+  }
+
+  .ba-marquee-track {
+    gap: 12px !important;
+    padding: 0.25rem 0.5rem 1rem 0.5rem !important;
+  }
+
+  .ba-card {
+    min-width: clamp(190px, 64vw, 220px) !important;
+    width: clamp(190px, 64vw, 220px) !important;
+    border-radius: 12px !important;
+  }
+
+  .ba-img-container {
+    border-radius: 12px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .ba-marquee-container::before,
+  .ba-marquee-container::after {
+    width: 12px !important;
+  }
+
+  .ba-marquee-track {
+    gap: 10px !important;
+    padding: 0.2rem 0.35rem 0.75rem 0.35rem !important;
+  }
+
+  .ba-card {
+    min-width: 180px !important;
+    width: 180px !important;
+    border-radius: 10px !important;
+  }
+
+  .ba-img-container {
+    border-radius: 10px !important;
   }
 }

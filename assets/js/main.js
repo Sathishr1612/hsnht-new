@@ -76,6 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize Luxury Before/After Gallery
   initLuxuryGallery();
 
+  // Initialize Reviews Marquee with Touch/Swipe & Drag support
+  initReviewsMarquee();
+
   // Initialize Testimonial Video Modal
   initTestimonialModal();
 
@@ -690,20 +693,36 @@ function initLuxuryGallery() {
   let velocity = 0;
   let momentumFrameId;
 
-  // Auto scroll logic (Pixels per frame, tuned speed for a smooth & engaging continuous marquee)
-  const autoScrollSpeed = 2.35;
+  // Auto scroll logic: responsive speed in pixels per second using delta-time
+  // Ensures consistent, silky-smooth speed across 60Hz, 90Hz, and 120Hz mobile displays
+  function getScrollSpeed() {
+    const width = window.innerWidth;
+    if (width < 480) return 28; // Calm, clear viewing for small phones
+    if (width < 768) return 34; // Smooth pace for mobile screens
+    if (width < 1024) return 42; // Tablet pace
+    return 52; // Desktop luxury pace (~0.85px per 60fps frame)
+  }
+
   let currentScroll = 0; // Use a float to accumulate scroll precisely
+  let lastFrameTime = performance.now();
 
   // Initialize currentScroll slightly after layout
   setTimeout(() => {
     currentScroll = track.scrollLeft;
+    lastFrameTime = performance.now();
   }, 100);
 
-  function scrollMarquee() {
+  function scrollMarquee(now) {
+    if (!lastFrameTime) lastFrameTime = now;
+    // Delta time in seconds, clamped to max 0.1s to prevent sudden jumps on tab switch
+    const delta = Math.min((now - lastFrameTime) / 1000, 0.1);
+    lastFrameTime = now;
+
     if (!isDown && !isHovered && !velocity) {
-      currentScroll += autoScrollSpeed;
+      const speed = getScrollSpeed();
+      currentScroll += speed * delta;
       // Infinite loop check: if scrolled past halfway, reset
-      if (currentScroll >= track.scrollWidth / 2) {
+      if (track.scrollWidth > 0 && currentScroll >= track.scrollWidth / 2) {
         currentScroll -= track.scrollWidth / 2;
       }
       track.scrollLeft = currentScroll;
@@ -717,6 +736,7 @@ function initLuxuryGallery() {
   // Sync currentScroll accumulator whenever custom scroll happens
   const syncScroll = () => {
     currentScroll = track.scrollLeft;
+    lastFrameTime = performance.now();
   };
 
   // Inertia animation function for dragging deceleration
@@ -725,7 +745,7 @@ function initLuxuryGallery() {
       currentScroll += velocity;
 
       // Infinite loop check: if scrolled past halfway, reset
-      if (currentScroll >= track.scrollWidth / 2) {
+      if (track.scrollWidth > 0 && currentScroll >= track.scrollWidth / 2) {
         currentScroll -= track.scrollWidth / 2;
       } else if (currentScroll < 0) {
         currentScroll += track.scrollWidth / 2;
@@ -737,6 +757,7 @@ function initLuxuryGallery() {
     } else {
       velocity = 0;
       isHovered = false; // Resume marquee
+      lastFrameTime = performance.now();
     }
   }
 
@@ -820,16 +841,20 @@ function initLuxuryGallery() {
     scrollLeft = track.scrollLeft;
   }, { passive: true });
 
-  track.addEventListener('touchend', () => {
+  const handleTouchEnd = () => {
     isDown = false;
     // Delay resuming auto-scroll to allow momentum scroll to settle naturally
     touchTimeout = setTimeout(() => {
       if (!isDown) {
         syncScroll();
         isHovered = false;
+        lastFrameTime = performance.now();
       }
     }, 1200);
-  });
+  };
+
+  track.addEventListener('touchend', handleTouchEnd);
+  track.addEventListener('touchcancel', handleTouchEnd);
 
   // Track standard scroll to keep accumulator in sync during native momentum scroll
   track.addEventListener('scroll', () => {
@@ -838,6 +863,197 @@ function initLuxuryGallery() {
     }
   }, { passive: true });
 }
+
+/* Testimonials Review Marquee with Touch/Swipe & Mouse Drag Support */
+function initReviewsMarquee() {
+  const track = document.getElementById('reviews-marquee-track');
+  if (!track) return;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+  let isHovered = false;
+  let animationFrameId;
+  let touchTimeout;
+
+  // Inertia / momentum variables for desktop dragging
+  let lastX = 0;
+  let lastTime = 0;
+  let velocity = 0;
+  let momentumFrameId;
+
+  // Responsive scroll speed in pixels per second using delta-time
+  function getScrollSpeed() {
+    const width = window.innerWidth;
+    if (width < 768) return 28; // Calm reading speed on mobile
+    return 42; // Luxury smooth pace on desktop
+  }
+
+  let currentScroll = 0;
+  let lastFrameTime = performance.now();
+
+  // Initialize currentScroll slightly after layout
+  setTimeout(() => {
+    currentScroll = track.scrollLeft;
+    lastFrameTime = performance.now();
+  }, 100);
+
+  function scrollMarquee(now) {
+    if (!lastFrameTime) lastFrameTime = now;
+    const delta = Math.min((now - lastFrameTime) / 1000, 0.1);
+    lastFrameTime = now;
+
+    if (!isDown && !isHovered && !velocity) {
+      const speed = getScrollSpeed();
+      currentScroll += speed * delta;
+
+      const halfWidth = track.scrollWidth / 2;
+      if (halfWidth > 0 && currentScroll >= halfWidth) {
+        currentScroll -= halfWidth;
+      }
+      track.scrollLeft = currentScroll;
+    }
+    animationFrameId = requestAnimationFrame(scrollMarquee);
+  }
+
+  animationFrameId = requestAnimationFrame(scrollMarquee);
+
+  const syncScroll = () => {
+    currentScroll = track.scrollLeft;
+    const halfWidth = track.scrollWidth / 2;
+    if (halfWidth > 0) {
+      if (currentScroll >= halfWidth) {
+        currentScroll -= halfWidth;
+        track.scrollLeft = currentScroll;
+      } else if (currentScroll < 0) {
+        currentScroll += halfWidth;
+        track.scrollLeft = currentScroll;
+      }
+    }
+    lastFrameTime = performance.now();
+  };
+
+  // Inertia animation function for mouse dragging deceleration
+  function applyMomentum() {
+    if (Math.abs(velocity) > 0.15) {
+      currentScroll += velocity;
+      const halfWidth = track.scrollWidth / 2;
+      if (halfWidth > 0) {
+        if (currentScroll >= halfWidth) {
+          currentScroll -= halfWidth;
+        } else if (currentScroll < 0) {
+          currentScroll += halfWidth;
+        }
+      }
+      track.scrollLeft = currentScroll;
+      velocity *= 0.94;
+      momentumFrameId = requestAnimationFrame(applyMomentum);
+    } else {
+      velocity = 0;
+      isHovered = false;
+      lastFrameTime = performance.now();
+    }
+  }
+
+  // Desktop Mouse Drag events
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    isHovered = true;
+    cancelAnimationFrame(momentumFrameId);
+    velocity = 0;
+    track.classList.add('is-dragging');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+    lastX = e.pageX;
+    lastTime = Date.now();
+  });
+
+  track.addEventListener('mouseleave', () => {
+    if (isDown) {
+      isDown = false;
+      track.classList.remove('is-dragging');
+      if (Math.abs(velocity) > 0.5) {
+        momentumFrameId = requestAnimationFrame(applyMomentum);
+      } else {
+        isHovered = false;
+        syncScroll();
+      }
+    } else {
+      isHovered = false;
+      lastFrameTime = performance.now();
+    }
+  });
+
+  track.addEventListener('mouseup', () => {
+    isDown = false;
+    track.classList.remove('is-dragging');
+    if (Math.abs(velocity) > 0.5) {
+      velocity = Math.max(-20, Math.min(20, velocity));
+      momentumFrameId = requestAnimationFrame(applyMomentum);
+    } else {
+      isHovered = false;
+      syncScroll();
+    }
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    track.scrollLeft = scrollLeft - walk;
+    syncScroll();
+
+    const now = Date.now();
+    const elapsed = now - lastTime;
+    if (elapsed > 0) {
+      const deltaX = e.pageX - lastX;
+      velocity = -deltaX / elapsed * 16.67;
+    }
+    lastX = e.pageX;
+    lastTime = now;
+  });
+
+  track.addEventListener('mouseenter', () => {
+    isHovered = true;
+    cancelAnimationFrame(momentumFrameId);
+    velocity = 0;
+  });
+
+  // Mobile Touch & Swipe events (hardware-accelerated native touch panning + pause/resume)
+  track.addEventListener('touchstart', (e) => {
+    isDown = true;
+    isHovered = true;
+    cancelAnimationFrame(momentumFrameId);
+    velocity = 0;
+    if (touchTimeout) clearTimeout(touchTimeout);
+    startX = e.touches[0].pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  }, { passive: true });
+
+  const handleTouchEnd = () => {
+    isDown = false;
+    // Delay resuming auto-scroll so user can read or swipe further
+    touchTimeout = setTimeout(() => {
+      if (!isDown) {
+        syncScroll();
+        isHovered = false;
+        lastFrameTime = performance.now();
+      }
+    }, 1500);
+  };
+
+  track.addEventListener('touchend', handleTouchEnd);
+  track.addEventListener('touchcancel', handleTouchEnd);
+
+  // Track standard scroll to keep accumulator in sync during native touch swiping
+  track.addEventListener('scroll', () => {
+    if (isDown || isHovered) {
+      syncScroll();
+    }
+  }, { passive: true });
+}
+
 
 /* Services Page: Interactive Concern Selector */
 function initConcernSelector() {
