@@ -7644,6 +7644,10 @@ a.contact-info-val:hover {
   border-color: rgba(201, 164, 106, 0.4);
 }
 
+.hsn-feature-card:active {
+  transform: scale(0.99);
+}
+
 .hsn-feature-icon-box {
   width: 48px;
   height: 48px;
@@ -7660,6 +7664,16 @@ a.contact-info-val:hover {
 .hsn-feature-card:hover .hsn-feature-icon-box {
   background: #C9A46A;
   color: #ffffff;
+}
+
+.hsn-feature-title {
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  margin-top: 2px;
+  line-height: 1.4;
+  word-break: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 /* ==========================================================================
