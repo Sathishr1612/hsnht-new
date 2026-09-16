@@ -24,16 +24,18 @@
 
     <style>
         .hr-hero::before {
-            background-image: url('assets/images/hsn-images/before-after-banner.png') !important;
-            background-position: right top 80px !important;
+            background-image: url('assets/images/hsn-images/before-after-banner.webp') !important;
+            background-position: right top !important;
             background-size: cover !important;
         }
 
-        /* Mobile: use dedicated image and position properly */
-        @media (max-width: 768px) {
-            #hr-hero::before {
-                background-image: url('assets/images/hsn-images/before-after-banner.png') !important;
-                background-position: 85% top 80px !important;
+        /* Mobile: center the patient subject in viewport */
+        @media (max-width: 991.98px) {
+            #hr-hero::before,
+            .hr-hero::before {
+                background-image: url('assets/images/hsn-images/before-after-banner.webp') !important;
+                background-position: 78% center !important;
+                background-size: cover !important;
                 -webkit-mask-image: none !important;
                 mask-image: none !important;
             }
@@ -56,7 +58,7 @@
     <section class="hr-hero" id="hr-hero">
         <div class="hr-hero-container">
             <div class="hr-hero-content" data-reveal="slide-right">
-                <span class="hr-hero-label section-subtitle">PATIENT RESULTS</span>
+                <span class="hr-hero-label section-subtitle">PATIENT RESULTS OF HSN DENSITY</span>
                 <h1 class="hr-hero-title">
                     Real Results.<br>
                     <span class="hr-highlight">Real Confidence.</span>
@@ -83,7 +85,7 @@
     <section class="py-5" style="background-color: var(--color-bg-main); overflow: hidden;">
         <div class="container text-center pt-5 pb-4" data-reveal="fade-up">
             <span class="editorial-label section-subtitle mx-auto mb-3 d-inline-block">
-                PATIENT RESULTS
+                REAL PATIENT RESULTS
             </span>
 
             <h2 class="editorial-title mb-4">
@@ -184,38 +186,6 @@
         </div>
     </section>
 
-    <!-- ==============================================
-         SECTION 3: OUR APPROACH
-         ============================================== -->
-    <!-- <section class="py-5 my-5" style="background-color: #FAFAFA;">
-        <div class="container" data-reveal="fade-up">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div class="position-relative ps-4 pt-4 mb-5 mb-lg-0" style="max-width: 480px; margin: 0 auto;">
-                        <div class="position-absolute"
-                            style="top: 0; left: 0; right: 2rem; bottom: 2rem; border: 2px solid var(--color-secondary); border-radius: 200px 200px 20px 20px; z-index: 1;">
-                        </div>
-
-                        <div class="position-relative overflow-hidden w-100"
-                            style="border-radius: 200px 200px 20px 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); z-index: 2; aspect-ratio: 4/5;">
-                            <img src="assets/images/hsn-images/hsn-center-logo.jpg" alt="Consultation"
-                                class="w-100 h-100 object-fit-cover">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <span class="section-subtitle d-block mb-3">OUR APPROACH</span>
-                    <h2 class="text-4xl font-serif text-primary mb-4" style="line-height: 1.2;">
-                        Your Hair Restoration Journey
-                    </h2>
-                    <p class="text-muted font-sans mb-4" style="font-size: 16px; line-height: 1.6;">
-                        Every journey starts with a consultation. Our team understands your concerns and helps you
-                        choose the right treatment.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- ==============================================
          SECTION 4: PATIENT JOURNEY

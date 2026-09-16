@@ -21,17 +21,27 @@
     <!-- Custom Style sheets -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <style>
+        /* Mobile: use dedicated mobile banner image for Video Gallery */
+        @media (max-width: 991.98px) {
+            body.vg-page #about-hero,
+            body.vg-page .about-hero {
+                background-image: url('assets/images/hsn-images/hsn-hair-restore-videos-mobile.jpg') !important;
+                background-position: center center !important;
+                background-size: cover !important;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="vg-page">
 
     <!-- Header Component (loaded dynamically) -->
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="about-hero" id="about-hero"
-        style="background-image: url('assets/images/hsn-images/hsn-hair-restore-videos.png'); background-position: right top 50px; background-size: cover; min-height: 580px;">
+        style="background-image: url('assets/images/hsn-images/hsn-hair-restore-videos.webp'); background-position: center center; background-size: cover;">
         <div class="about-hero-container">
             <div class="about-hero-content mt-5" data-reveal="slide-right">
                 <!-- <span class="about-hero-label section-subtitle">HSN SUPER SPECIALITY</span> -->

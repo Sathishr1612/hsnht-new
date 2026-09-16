@@ -86,9 +86,9 @@ h6 {
 .wc-label,
 .hero-label-v2 {
   font-family: var(--font-sans, "Outfit", sans-serif) !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  letter-spacing: 2px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2.5px !important;
   line-height: 1.4 !important;
   text-transform: uppercase !important;
   color: var(--color-secondary, #C9A46A) !important;
@@ -386,7 +386,7 @@ h6 {
   height: clamp(520px, 42vw, 680px);
   min-height: 520px;
   max-height: 680px;
-  margin-top: 75px;
+  margin-top: 74px;
   overflow: hidden;
   background-color: #0c0f14;
 }
@@ -3215,7 +3215,7 @@ h6 {
 .cta-banner-bg-img {
   position: absolute;
   inset: 0;
-  background-image: url('../images/hsn-images/cta-footer-hsn.png');
+  background-image: url('../images/hsn-images/cta-footer-hsn.webp');
   background-size: cover;
   background-position: 84% 30%;
   opacity: 0.78;
@@ -3403,7 +3403,7 @@ h6 {
   min-height: 520px;
   display: flex;
   align-items: center;
-  background-image: url('../images/hsn-images/hsn-about-banner.png');
+  background-image: url('../images/hsn-images/hsn-about-banner.webp');
   background-size: cover;
   /* Shift image down by navbar height (80px) so person's head shows below the fixed navbar */
   background-position: right top 80px;
@@ -3459,12 +3459,7 @@ h6 {
 }
 
 .about-hero-label::before {
-  content: '';
-  display: inline-block;
-  width: 40px;
-  height: 1px;
-  background-color: #C9A46A;
-  margin-right: 16px;
+  display: none !important;
 }
 
 .about-hero-label::after {
@@ -5842,7 +5837,7 @@ a.luxury-service-item {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images/hsn-images/hair-restore.png');
+  background-image: url('../images/hsn-images/hair-restore.webp');
   background-size: cover;
   /* Shift image down by navbar height (80px) so person's head shows below navbar */
   background-position: right top 80px;
@@ -5854,21 +5849,20 @@ a.luxury-service-item {
 }
 
 .facial-hero::before {
-  background-image: url('../images/hsn-images/high-density-eye-brow-banner.png') !important;
-  /* Push image down by navbar height so face/head is visible below navbar */
-  background-position: center top 80px !important;
+  background-image: url('../images/hsn-images/high-density-eye-brow-banner.webp') !important;
+  background-position: center center !important;
   background-size: cover;
 }
 
 .scalp-cosmetic-hero::before {
-  background-image: url('../images/hsn-images/scalp-aesthetics-baner.png') !important;
-  background-position: center top 80px !important;
+  background-image: url('../images/hsn-images/scalp-aesthetics-baner.webp') !important;
+  background-position: center center !important;
   background-size: cover;
 }
 
 .testimonials-hero::before {
   background-image: url('../images/testimoniyal-banner-hsn.webp') !important;
-  background-position: center top 80px !important;
+  background-position: center center !important;
   background-size: cover;
 }
 
@@ -5905,12 +5899,7 @@ a.luxury-service-item {
 }
 
 .hr-hero-label::before {
-  content: '';
-  display: inline-block;
-  width: 40px;
-  height: 1px;
-  background-color: #C9A46A;
-  margin-right: 16px;
+  display: none !important;
 }
 
 .hr-hero-title {
@@ -6007,7 +5996,7 @@ a.luxury-service-item {
 
   /* Center image on mobile & remove left-fade mask that hides image on narrow screens */
   #hr-hero::before {
-    background-position: 90% top 80px !important;
+    background-position: center center !important;
     /* Remove the desktop left-to-right fade mask — show full image on mobile */
     -webkit-mask-image: none !important;
     mask-image: none !important;
@@ -8143,7 +8132,7 @@ a.contact-info-val:hover {
 @media (max-width: 991.98px) {
   .about-hero, #about-hero {
     min-height: 480px !important;
-    background-image: url('../images/hsn-images/hair-restoration-service-5.png') !important;
+    background-image: url('../images/hsn-hair-5.webp') !important;
     background-position: center center !important;
     background-size: cover !important;
   }
@@ -8152,7 +8141,7 @@ a.contact-info-val:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.70) 50%, rgba(15, 23, 42, 0.90) 100%) !important;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.30) 50%, rgba(15, 23, 42, 0.55) 100%) !important;
     z-index: 1;
   }
 

@@ -5,40 +5,74 @@
     padding-bottom: 60px !important;
   }
 
-  /* Mobile Navbar - Transparent initially, Glassmorphism on scroll */
+  /* Mobile Navbar - Solid Luxury Dark Bar for 100% Logo & Toggle Visibility across all pages */
   #main-navbar {
-    height: 75px;
-    display: flex;
-    align-items: center;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border-bottom: 1px solid transparent !important;
-    box-shadow: none !important;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  }
-
-  #main-navbar.navbar-scrolled {
-    background: rgba(248, 247, 244, 0.9) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border-bottom: 1px solid rgba(29, 29, 31, 0.08) !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02) !important;
+    height: 74px !important;
+    display: flex !important;
+    align-items: center !important;
+    background: #121214 !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-bottom: 1px solid rgba(201, 164, 106, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.3s ease !important;
   }
 
   .navbar-brand .logo-emblem-svg {
-    width: 38px !important;
-    height: 38px !important;
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
   }
 
   .navbar-brand .logo-text-top {
-    font-size: 12px !important;
-    letter-spacing: 0.03em !important;
+    color: #FFFFFF !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.1 !important;
   }
 
   .navbar-brand .logo-text-bottom {
-    font-size: 8px !important;
-    letter-spacing: 0.1em !important;
+    color: #C9A46A !important;
+    font-size: 9.5px !important;
+    letter-spacing: 0.05em !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Mobile Side Panel Drawer Header Logo Styling — Dark Text on Light Drawer Background */
+  #drawer-logo-link .logo-text-top {
+    color: #121214 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+  }
+
+  #drawer-logo-link .logo-text-bottom {
+    color: #C9A46A !important;
+    font-size: 9px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Mobile Toggle Button - High Contrast Gold Container & Icon */
+  #mobile-menu-toggle {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 8px !important;
+    background: rgba(201, 164, 106, 0.18) !important;
+    border: 1px solid rgba(201, 164, 106, 0.4) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+  }
+
+  #mobile-menu-toggle i,
+  #mobile-menu-toggle svg {
+    color: #C9A46A !important;
+    stroke: #C9A46A !important;
+    width: 22px !important;
+    height: 22px !important;
   }
 
   /* Hero Overrides — Stacked Mobile Layout (Clean Visible Image on Top, Content Card Below) */
@@ -46,7 +80,7 @@
     height: auto !important;
     min-height: auto !important;
     max-height: none !important;
-    margin-top: 75px !important;
+    margin-top: 74px !important;
     padding: 0 0 2.5rem 0 !important;
     position: relative !important;
     background-color: #0c0f14 !important;
@@ -369,13 +403,19 @@
     font-size: 1.75rem !important;
   }
 
+  .navbar-brand .logo-emblem-svg {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+  }
+
   .navbar-brand .logo-text-top {
-    font-size: 11.5px !important;
+    font-size: 14px !important;
   }
 
   .navbar-brand .logo-text-bottom {
-    font-size: 7.5px !important;
-    letter-spacing: 0.1em !important;
+    font-size: 8.5px !important;
+    letter-spacing: 0.05em !important;
   }
 
   .btn-gold-outline,
@@ -395,36 +435,36 @@
 /* Extra-small mobile screen optimizations */
 @media (max-width: 399.98px) {
   .navbar-brand .logo-emblem-svg {
-    width: 34px !important;
-    height: 34px !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
   }
 
   .navbar-brand .logo-text-top {
-    font-size: 10.5px !important;
+    font-size: 13px !important;
   }
 
   .navbar-brand .logo-text-bottom {
-    font-size: 7px !important;
-    letter-spacing: 0.08em !important;
+    font-size: 8px !important;
+    letter-spacing: 0.05em !important;
   }
 }
 
-/* ── Hide all banner page labels on mobile only ── */
+/* ── Ensure banner page labels are visible on mobile ── */
 @media (max-width: 768px) {
 
-  /* Service/inner page hero labels */
   .hr-hero-label,
   .about-hero-label,
-  .hero-label-v2,
-  /* Home page badge (line + text) */
-  .hero-badge-container {
-    display: none !important;
+  .hero-label-v2 {
+    display: inline-flex !important;
+    font-size: 15px !important;
+    letter-spacing: 1.5px !important;
   }
 
   /* ── All inner-page heroes (testimonials, before-after, etc.): center image on mobile ── */
-  /* Remove the desktop left-to-right fade mask and center the subject */
+  /* Remove the desktop left-to-right fade mask and center the subject cleanly at top 0px */
   .hr-hero::before {
-    background-position: center top 80px !important;
+    background-position: center center !important;
     -webkit-mask-image: none !important;
     mask-image: none !important;
     -webkit-mask: none !important;
@@ -433,16 +473,35 @@
 
   /* ── Home Page Hero Statistics (Mobile Only Visibility Fix) ── */
   .hero-content .border-top.border-secondary .col-4 span.text-primary {
-    color: #ffffff !important; /* Make the numbers stark white */
-    font-weight: 800 !important; /* Extra bold */
+    color: #ffffff !important;
+    /* Make the numbers stark white */
+    font-weight: 800 !important;
+    /* Extra bold */
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85), 0 4px 20px rgba(0, 0, 0, 0.6) !important;
   }
 
   .hero-content .border-top.border-secondary .col-4 span.text-secondary {
-    color: #C9A46A !important; /* Keep the luxury gold color but brighten it */
-    font-weight: 700 !important; /* Bold */
+    color: #C9A46A !important;
+    /* Keep the luxury gold color but brighten it */
+    font-weight: 700 !important;
+    /* Bold */
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9) !important;
-    font-size: 10px !important; /* Slightly larger for mobile readability */
+    font-size: 10px !important;
+    /* Slightly larger for mobile readability */
+  }
+
+  .section-subtitle,
+  .section-eyebrow,
+  .hr-label,
+  .editorial-label,
+  .about-intro-label,
+  .our-story-label,
+  .who-we-are-label,
+  .mission-vision-label,
+  .core-values-label,
+  .wc-label {
+    font-size: 16px !important;
+    letter-spacing: 1.5px !important;
   }
 }
 
@@ -453,7 +512,9 @@
 .section-subtitle,
 .section-eyebrow,
 .hr-label,
+.hr-hero-label,
 .editorial-label,
+.about-hero-label,
 .about-intro-label,
 .our-story-label,
 .who-we-are-label,
@@ -461,9 +522,9 @@
 .core-values-label,
 .wc-label {
   font-family: var(--font-sans, "Outfit", sans-serif) !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  letter-spacing: 2px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2.5px !important;
   line-height: 1.4 !important;
   text-transform: uppercase !important;
   color: var(--color-secondary, #C9A46A) !important;
@@ -562,10 +623,38 @@
    SERVICE PAGES RESPONSIVENESS (Hair Restoration, Facial, Scalp, Dermatology)
    ========================================================================== */
 @media (max-width: 991.98px) {
-  .hr-hero {
+  .hr-hero,
+  .about-hero,
+  #hr-hero,
+  #about-hero {
     min-height: auto !important;
-    padding-top: 100px !important;
-    padding-bottom: 50px !important;
+    margin-top: 74px !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 3.5rem !important;
+    background-position: center center !important;
+  }
+
+  body.about-page .about-hero,
+  body.about-page #about-hero {
+    background-image: url('../images/hsn-hair-5.webp') !important;
+  }
+
+  body.vg-page .about-hero,
+  body.vg-page #about-hero {
+    background-image: url('../images/hsn-images/hsn-hair-restore-videos-mobile.jpg') !important;
+  }
+
+  .hr-hero-container,
+  .about-hero-container {
+    position: relative !important;
+    z-index: 3 !important;
+    padding-top: 1.5rem !important;
+  }
+
+  /* Lightened dark overlay so background doctor & patient images remain 100% visible */
+  #about-hero::before,
+  .about-hero::before {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.30) 50%, rgba(15, 23, 42, 0.55) 100%) !important;
   }
 
   .hr-hero-content {
