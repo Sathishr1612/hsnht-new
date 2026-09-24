@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
@@ -33,6 +34,14 @@
                 -webkit-mask-image: none !important;
                 mask-image: none !important;
             }
+        }
+    </style>
+    <style>
+        /* Desktop: disable fading mask and align top to prevent head cropping */
+        .hr-hero::before {
+            -webkit-mask-image: none !important;
+            mask-image: none !important;
+            background-position: right top !important;
         }
     </style>
 </head>

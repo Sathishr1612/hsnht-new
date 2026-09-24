@@ -233,7 +233,6 @@ h6 {
   background: rgba(248, 247, 244, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  /* Removed border-bottom — prevents visible gap/line between navbar and banner */
   transition: var(--transition-smooth);
   padding-top: 0.75rem !important;
   padding-bottom: 0.75rem !important;
@@ -247,8 +246,8 @@ h6 {
 }
 
 .navbar-brand .logo-emblem-svg {
-  width: 46px !important;
-  height: 46px !important;
+  width: 60px !important;
+  height: 60px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6749,6 +6748,7 @@ a.luxury-service-item {
 
 /* Hero Banners: Hide Call Now button on Desktop (>991px), display ONLY on Mobile / Tablet (<=991px) */
 @media (min-width: 992px) {
+
   .hr-hero-actions .hr-btn-outline,
   .hr-hero .hr-btn-outline {
     display: none !important;
@@ -6756,6 +6756,7 @@ a.luxury-service-item {
 }
 
 @media (max-width: 991.98px) {
+
   .hr-hero-actions .hr-btn-outline,
   .hr-hero .hr-btn-outline {
     display: inline-flex !important;
@@ -6993,6 +6994,34 @@ a.luxury-service-item {
   .portrait-card {
     width: 65vw;
     aspect-ratio: 3/4;
+  }
+}
+
+/* Landscape Card for Middle Row */
+.landscape-card {
+  width: 380px;
+  height: auto;
+  aspect-ratio: 4/3;
+}
+
+.landscape-card img {
+  transition: transform 0.6s ease;
+}
+
+.landscape-card:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 991px) {
+  .landscape-card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .landscape-card {
+    width: 80vw;
+    aspect-ratio: 4/3;
   }
 }
 
@@ -8145,7 +8174,9 @@ a.contact-info-val:hover {
 }
 
 @media (max-width: 991.98px) {
-  .about-hero, #about-hero {
+
+  .about-hero,
+  #about-hero {
     min-height: 480px !important;
     background-image: url('../images/hsn-hair-5.webp') !important;
     background-position: center center !important;
@@ -8435,12 +8466,47 @@ a.contact-info-val:hover {
 }
 
 /* Stagger Delays */
-[data-delay="50"], [data-reveal-delay="50"] { transition-delay: 50ms !important; }
-[data-delay="100"], [data-reveal-delay="100"] { transition-delay: 100ms !important; }
-[data-delay="150"], [data-reveal-delay="150"] { transition-delay: 150ms !important; }
-[data-delay="200"], [data-reveal-delay="200"] { transition-delay: 200ms !important; }
-[data-delay="250"], [data-reveal-delay="250"] { transition-delay: 250ms !important; }
-[data-delay="300"], [data-reveal-delay="300"] { transition-delay: 300ms !important; }
-[data-delay="350"], [data-reveal-delay="350"] { transition-delay: 350ms !important; }
-[data-delay="400"], [data-reveal-delay="400"] { transition-delay: 400ms !important; }
-[data-delay="500"], [data-reveal-delay="500"] { transition-delay: 500ms !important; }
+[data-delay="50"],
+[data-reveal-delay="50"] {
+  transition-delay: 50ms !important;
+}
+
+[data-delay="100"],
+[data-reveal-delay="100"] {
+  transition-delay: 100ms !important;
+}
+
+[data-delay="150"],
+[data-reveal-delay="150"] {
+  transition-delay: 150ms !important;
+}
+
+[data-delay="200"],
+[data-reveal-delay="200"] {
+  transition-delay: 200ms !important;
+}
+
+[data-delay="250"],
+[data-reveal-delay="250"] {
+  transition-delay: 250ms !important;
+}
+
+[data-delay="300"],
+[data-reveal-delay="300"] {
+  transition-delay: 300ms !important;
+}
+
+[data-delay="350"],
+[data-reveal-delay="350"] {
+  transition-delay: 350ms !important;
+}
+
+[data-delay="400"],
+[data-reveal-delay="400"] {
+  transition-delay: 400ms !important;
+}
+
+[data-delay="500"],
+[data-reveal-delay="500"] {
+  transition-delay: 500ms !important;
+}

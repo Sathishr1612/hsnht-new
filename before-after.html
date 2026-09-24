@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
@@ -24,20 +25,26 @@
 
     <style>
         .hr-hero::before {
-            background-image: url('assets/images/hsn-images/before-after-banner.webp') !important;
+            background-image: url('assets/images/hsn-images/hair-restore-before-after.webp') !important;
             background-position: right top !important;
             background-size: cover !important;
+            /* Disable the fading mask from style.css so the image is fully visible */
+            -webkit-mask-image: none !important;
+            mask-image: none !important;
+            opacity: 0.8; /* Slight overlay so text stays readable */
         }
 
         /* Mobile: center the patient subject in viewport */
         @media (max-width: 991.98px) {
+
             #hr-hero::before,
             .hr-hero::before {
-                background-image: url('assets/images/hsn-images/before-after-banner.webp') !important;
-                background-position: 78% center !important;
+                background-image: url('assets/images/hsn-images/hair-restore-banner-mobile.jpg') !important;
+                background-position: center center !important;
                 background-size: cover !important;
                 -webkit-mask-image: none !important;
                 mask-image: none !important;
+                opacity: 0.8;
             }
         }
     </style>
@@ -140,45 +147,45 @@
             <div class="moving-row-container" style="--duration: 45s;">
                 <div class="moving-row row-ltr">
                     <!-- Duplicate items for infinite loop -->
-                    <div class="moving-card portrait-card">
-                        <img src="assets/images/hsn-hair-2.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card">
+                        <img src="assets/images/hsn-images/hair-restoration-service-5.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="moving-card portrait-card">
-                        <img src="assets/images/hsn-hair-3.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card">
+                        <img src="assets/images/hsn-images/hair-restoration-service-3.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="moving-card portrait-card">
-                        <img src="assets/images/hsn-hair-4.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card">
+                        <img src="assets/images/hsn-images/hair-restoration-6.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="moving-card portrait-card">
-                        <img src="assets/images/hsn-hair-5.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card">
+                        <img src="assets/images/hsn-images/hsn-hair-restore-videos-mobile.jpg" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="moving-card portrait-card">
-                        <img src="assets/images/hsn-hair-6.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card">
+                        <img src="assets/images/hsn-images/hair-fall-service-1.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
                     <!-- Duplicates -->
-                    <div class="moving-card portrait-card">
-                        <img src="assets/images/hsn-hair-2.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card">
+                        <img src="assets/images/hsn-images/hair-restoration-service-5.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="moving-card portrait-card">
-                        <img src="assets/images/hsn-hair-3.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card">
+                        <img src="assets/images/hsn-images/eye-brow-restoration-service.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="moving-card portrait-card">
-                        <img src="assets/images/hsn-hair-4.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card">
+                        <img src="assets/images/hsn-images/testimoniyal-banner-hsn-bef-aft.jpg" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="moving-card portrait-card">
-                        <img src="assets/images/hsn-hair-5.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card">
+                        <img src="assets/images/hsn-images/hair-restoration-service-4.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="moving-card portrait-card">
-                        <img src="assets/images/hsn-hair-6.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card">
+                        <img src="assets/images/hsn-images/hair-fall-service-1.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
                 </div>
