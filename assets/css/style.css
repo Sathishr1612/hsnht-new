@@ -6725,9 +6725,9 @@ a.luxury-service-item {
   align-items: center;
   justify-content: center;
   padding: 18px 40px;
-  border: 1.5px solid rgba(201, 164, 106, 0.7);
-  color: #FFFFFF;
-  background: rgba(201, 164, 106, 0.12);
+  border: 1.5px solid #C9A46A;
+  color: #1D1D1F !important;
+  background: rgba(201, 164, 106, 0.08);
   font-family: var(--font-sans);
   font-size: 15px !important;
   font-weight: 600 !important;
@@ -6735,23 +6735,23 @@ a.luxury-service-item {
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
   transition: all 0.3s ease;
 }
 
 .hr-btn-outline:hover {
-  background-color: var(--color-secondary, #C9A46A);
-  color: #121214 !important;
-  border-color: var(--color-secondary, #C9A46A);
+  background-color: #C9A46A;
+  color: #FFFFFF !important;
+  border-color: #C9A46A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(201, 164, 106, 0.3);
 }
 
-/* Hero Banners: Hide Call Now button on Desktop (>991px), display ONLY on Mobile / Tablet (<=991px) */
+/* Hero Banners: Display Call Now button consistently on Desktop & Mobile */
 @media (min-width: 992px) {
 
   .hr-hero-actions .hr-btn-outline,
   .hr-hero .hr-btn-outline {
-    display: none !important;
+    display: inline-flex !important;
   }
 }
 
