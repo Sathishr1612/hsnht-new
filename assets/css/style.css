@@ -5,8 +5,8 @@
 /* Color Variables and Tokens */
 :root {
   --color-primary: #1D1D1F;
-  --color-secondary: #C9A46A;
-  --color-gold-soft: #D8B57A;
+  --color-secondary: #AF7D32; /* Darker, richer gold */
+  --color-gold-soft: #C49856; /* Slightly softer but still darker than before */
   --color-beige-soft: #E8DDD0;
   --color-bg-main: #F8F7F4;
   --color-bg-alt: #F1EDE6;

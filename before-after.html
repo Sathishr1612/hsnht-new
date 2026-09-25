@@ -31,7 +31,8 @@
             /* Disable the fading mask from style.css so the image is fully visible */
             -webkit-mask-image: none !important;
             mask-image: none !important;
-            opacity: 0.8; /* Slight overlay so text stays readable */
+            opacity: 0.8;
+            /* Slight overlay so text stays readable */
         }
 
         /* Mobile: center the patient subject in viewport */
@@ -146,7 +147,7 @@
             <!-- Row 2: Left to Right -->
             <div class="moving-row-container" style="--duration: 45s;">
                 <div class="moving-row row-ltr">
-                    <!-- Duplicate items for infinite loop -->
+                    <!-- Set 1 -->
                     <div class="moving-card landscape-card">
                         <img src="assets/images/hsn-images/hair-restoration-service-5.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
@@ -155,8 +156,8 @@
                         <img src="assets/images/hsn-images/hair-restoration-service-3.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="moving-card landscape-card">
-                        <img src="assets/images/hsn-images/hair-restoration-6.webp" alt="Happy Patient"
+                    <div class="moving-card landscape-card" style="aspect-ratio: 16/9; width: 450px;">
+                        <img src="assets/images/hsn-images/beard.jpg" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
                     <div class="moving-card landscape-card">
@@ -167,21 +168,21 @@
                         <img src="assets/images/hsn-images/hair-fall-service-1.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <!-- Duplicates -->
+                    <!-- Set 2 (Exact Duplicate for Infinite Loop) -->
                     <div class="moving-card landscape-card">
                         <img src="assets/images/hsn-images/hair-restoration-service-5.webp" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
                     <div class="moving-card landscape-card">
-                        <img src="assets/images/hsn-images/eye-brow-restoration-service.webp" alt="Happy Patient"
+                        <img src="assets/images/hsn-images/hair-restoration-service-3.webp" alt="Happy Patient"
+                            class="w-100 h-100 object-fit-cover">
+                    </div>
+                    <div class="moving-card landscape-card" style="aspect-ratio: 16/9; width: 450px;">
+                        <img src="assets/images/hsn-images/beard.jpg" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
                     <div class="moving-card landscape-card">
-                        <img src="assets/images/hsn-images/testimoniyal-banner-hsn-bef-aft.jpg" alt="Happy Patient"
-                            class="w-100 h-100 object-fit-cover">
-                    </div>
-                    <div class="moving-card landscape-card">
-                        <img src="assets/images/hsn-images/hair-restoration-service-4.webp" alt="Happy Patient"
+                        <img src="assets/images/hsn-images/hsn-hair-restore-videos-mobile.jpg" alt="Happy Patient"
                             class="w-100 h-100 object-fit-cover">
                     </div>
                     <div class="moving-card landscape-card">
@@ -362,7 +363,6 @@
                         container.scrollLeft += speed;
 
                         // Infinite loop logic
-                        // If it scrolls past half the total scrollable width, loop it back
                         const maxScroll = container.scrollWidth / 2;
 
                         if (speed > 0 && container.scrollLeft >= maxScroll) {
@@ -376,11 +376,11 @@
 
                 requestAnimationFrame(scroll);
 
-                // Touch / Mouse events for swiping
+                // --- DESKTOP MOUSE DRAG ---
                 const start = (e) => {
                     isDown = true;
                     container.style.cursor = 'grabbing';
-                    startX = (e.pageX || e.touches[0].pageX) - container.offsetLeft;
+                    startX = e.pageX - container.offsetLeft;
                     scrollLeft = container.scrollLeft;
                 };
                 const end = () => {
@@ -389,22 +389,38 @@
                 };
                 const move = (e) => {
                     if (!isDown) return;
-                    const x = (e.pageX || e.touches[0].pageX) - container.offsetLeft;
-                    const walk = (x - startX) * 2; // Scroll speed multiplier
+                    e.preventDefault(); // Prevent text selection
+                    const x = e.pageX - container.offsetLeft;
+                    const walk = (x - startX) * 2;
                     container.scrollLeft = scrollLeft - walk;
                 };
 
                 container.addEventListener('mousedown', start);
-                container.addEventListener('touchstart', start, { passive: true });
                 container.addEventListener('mouseleave', end);
                 container.addEventListener('mouseup', end);
-                container.addEventListener('touchend', end);
                 container.addEventListener('mousemove', move);
-                container.addEventListener('touchmove', move, { passive: true });
 
-                // Pause on hover
+                // --- MOBILE TOUCH SWIPE ---
+                // Let native CSS overflow-x handle the incredibly smooth mobile swiping!
+                // We just pause the auto-scroll when they touch the screen.
+                let touchTimeout;
+                container.addEventListener('touchstart', () => {
+                    isHovered = true;
+                    clearTimeout(touchTimeout);
+                }, { passive: true });
+
+                container.addEventListener('touchend', () => {
+                    // Wait 1.5 seconds after they stop touching before resuming auto-scroll
+                    touchTimeout = setTimeout(() => {
+                        isHovered = false;
+                    }, 1500);
+                }, { passive: true });
+
+                // Pause on desktop hover
                 container.addEventListener('mouseenter', () => isHovered = true);
-                container.addEventListener('mouseleave', () => isHovered = false);
+                container.addEventListener('mouseleave', () => {
+                    if (!isDown) isHovered = false;
+                });
             });
         });
     </script>
