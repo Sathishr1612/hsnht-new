@@ -474,7 +474,7 @@ h6 {
 /* Sleek Ultra-Translucent Glass Panel — Non-Obstructive */
 .hero-text-block {
   width: 100%;
-  max-width: 440px;
+  max-width: 500px;
   position: relative;
   z-index: 7;
   margin: 0 auto;
@@ -482,7 +482,7 @@ h6 {
   /* balanced transparent glass so patient faces show cleanly */
   border: 1px solid rgba(201, 164, 106, 0.28);
   border-radius: 16px;
-  padding: 22px 26px;
+  padding: 22px 24px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -560,28 +560,31 @@ h6 {
   font-weight: 400;
 }
 
-/* Points & Specialities Chip Grid for Slides 2 & 4 — Compact */
+/* Points & Specialities Chip Grid — Responsive 2-Column Inline Flex */
 .hero-points-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 6px 8px;
   max-width: 100%;
   margin-bottom: 0.85rem;
 }
 
 .hero-point-chip {
   display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  align-items: flex-start;
+  gap: 6px;
   padding: 4px 10px;
-  background: rgba(12, 15, 20, 0.6);
-  border: 1px solid rgba(201, 164, 106, 0.3);
-  border-radius: 20px;
-  font-size: 0.8rem;
+  background: rgba(12, 15, 20, 0.65);
+  border: 1px solid rgba(201, 164, 106, 0.32);
+  border-radius: 8px;
+  font-size: 0.76rem;
   font-weight: 500;
   color: #FFFFFF;
+  line-height: 1.35;
   backdrop-filter: blur(6px);
-  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+  word-break: break-word;
 }
 
 .hero-point-chip:hover {
@@ -592,7 +595,9 @@ h6 {
 
 .hero-point-chip i {
   color: #C9A46A;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  margin-top: 1px;
+  flex-shrink: 0;
 }
 
 /* CTA Buttons — Single Dominant CTA Styling */
@@ -804,7 +809,7 @@ h6 {
     padding: 20px 18px;
     border-radius: 16px;
     margin: 0 auto;
-    max-width: 440px;
+    max-width: 480px;
   }
 
   .hero-side-btn,
