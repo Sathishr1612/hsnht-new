@@ -5,8 +5,10 @@
 /* Color Variables and Tokens */
 :root {
   --color-primary: #1D1D1F;
-  --color-secondary: #AF7D32; /* Darker, richer gold */
-  --color-gold-soft: #C49856; /* Slightly softer but still darker than before */
+  --color-secondary: #AF7D32;
+  /* Darker, richer gold */
+  --color-gold-soft: #C49856;
+  /* Slightly softer but still darker than before */
   --color-beige-soft: #E8DDD0;
   --color-bg-main: #F8F7F4;
   --color-bg-alt: #F1EDE6;
@@ -3498,6 +3500,51 @@ h6 {
   color: #555555;
   /* font-weight removed */
   max-width: 480px;
+}
+
+/* About Hero Motto / Slogan Badge */
+.about-hero-motto {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 10px 24px;
+  background: rgba(201, 164, 106, 0.14);
+  border: 1px solid rgba(201, 164, 106, 0.42);
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.about-hero-motto:hover {
+  background: rgba(201, 164, 106, 0.24);
+  border-color: rgba(201, 164, 106, 0.65);
+  transform: translateY(-1px);
+}
+
+.about-hero-motto i {
+  color: #B08D55;
+  font-size: 1.15rem;
+}
+
+.about-hero-motto .motto-text-dark {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #1A1A1A;
+  text-transform: uppercase;
+}
+
+.about-hero-motto .motto-text-gold {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #B08D55;
+  text-transform: uppercase;
 }
 
 /* Hide the HTML image wrapper since we are using a background image for full-width effect */

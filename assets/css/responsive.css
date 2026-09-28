@@ -680,6 +680,31 @@
     text-align: center;
   }
 
+  .about-hero-motto {
+    margin-top: 14px !important;
+    padding: 7px 16px !important;
+    background: rgba(12, 15, 20, 0.7) !important;
+    border: 1px solid rgba(201, 164, 106, 0.45) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .about-hero-motto .motto-text-dark {
+    color: #FFFFFF !important;
+    font-size: 0.88rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .about-hero-motto .motto-text-gold {
+    color: #C9A46A !important;
+    font-size: 0.88rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .about-hero-motto i {
+    color: #C9A46A !important;
+    font-size: 0.95rem !important;
+  }
+
   .hr-highlight-list {
     text-align: left;
     display: inline-block;
