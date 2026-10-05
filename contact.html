@@ -148,66 +148,9 @@
                 <!-- Left Side: Premium Appointment Form (55%) -->
                 <div class="col-lg-7" data-reveal="slide-right">
                     <div class="luxury-contact-card p-3 p-md-5">
-                        <form id="contact-booking-form">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <label for="contact-name" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" id="contact-name"
-                                        placeholder="e.g. Vikram Rao" required />
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="contact-phone" class="form-label">Mobile Number</label>
-                                    <input type="tel" class="form-control" id="contact-phone"
-                                        placeholder="e.g. +91 90355 54728" required />
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="contact-email" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" id="contact-email"
-                                        placeholder="e.g. name@domain.com" required />
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="contact-city" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="contact-city"
-                                        placeholder="e.g. Bangalore" required />
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="contact-clinic" class="form-label">Preferred Clinic</label>
-                                    <select class="form-select" id="contact-clinic" required>
-                                        <option value="" disabled selected>Select Clinic</option>
-                                        <option value="Bangalore">Bangalore</option>
-                                        <option value="Coimbatore">Coimbatore</option>
-                                        <option value="Chennai">Chennai</option>
-
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="contact-treatment" class="form-label">Treatment</label>
-                                    <select class="form-select" id="contact-treatment" required>
-                                        <option value="" disabled selected>Select Therapy</option>
-                                        <option value="Hair Transplantation">Hair Transplantation</option>
-                                        <option value="Eyebrow Restoration">Eyebrow Restoration</option>
-                                        <option value="Beard Restoration">Beard Restoration</option>
-                                        <option value="Stem Cell Therapy">Stem Cell Therapy</option>
-                                        <option value="Scalp Treatment">Scalp Treatment</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label for="contact-date" class="form-label">Preferred Date</label>
-                                    <input type="date" class="form-control" id="contact-date" required />
-                                </div>
-                                <div class="col-12">
-                                    <label for="contact-message" class="form-label">Message</label>
-                                    <textarea class="form-control" id="contact-message" rows="4"
-                                        placeholder="How can we help you? Describe your concerns..."></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-gold-solid w-100 py-3">
-                                        BOOK CONSULTATION
-                                    </button>
-
-                                </div>
-                            </div>
-                        </form>
+                        <div class="plumb5-form-wrapper">
+                            <div id="dvPlumb5InPageScript4" plumb5="Plumb5InPageForms" plumb5formidentifier="4"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -608,8 +551,7 @@
                     HSN Super Speciality.
                 </p>
                 <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 align-items-center">
-                    <button class="btn btn-gold-solid py-3 px-5 text-uppercase" data-bs-toggle="modal"
-                        data-bs-target="#consultationModal">
+                    <button class="btn btn-gold-solid py-3 px-5 text-uppercase popup-form-btn">
                         BOOK CONSULTATION
                     </button>
                     <a href="tel:+919035554728" class="btn btn-gold-outline py-3 px-5 text-uppercase">
@@ -654,30 +596,6 @@
                 observer.observe(card);
             });
         })();
-
-        // Form submission redirect to premium VIP success screen of the existing booking modal
-        document.getElementById('contact-booking-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = document.getElementById('contact-name').value;
-            const treatment = document.getElementById('contact-treatment').value;
-            const date = document.getElementById('contact-date').value;
-
-            // Set success summary details in the existing modal success panel
-            document.getElementById('success-summary-name').innerText = name;
-            document.getElementById('success-summary-service').innerText = treatment;
-            document.getElementById('success-summary-date').innerText = date;
-            document.getElementById('success-summary-time').innerText = "Requested Slot";
-
-            // Show the modal
-            const bookingModal = new bootstrap.Modal(document.getElementById('consultationModal'));
-
-            // Toggle panels inside the modal to show success screen directly
-            document.getElementById('booking-step-1-panel').style.display = 'none';
-            document.getElementById('booking-step-2-panel').style.display = 'none';
-            document.getElementById('booking-success-panel').style.display = 'block';
-
-            bookingModal.show();
-        });
     </script>
 </body>
 

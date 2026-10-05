@@ -82,8 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize Testimonial Video Modal
   initTestimonialModal();
 
-  // Initialize Consultation Booking Modal
-  initConsultationModal();
+  // Popup form buttons (Plumb5 popup is attached separately): stop href="#" from jumping to top
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("a.popup-form-btn[href=\"#\"]");
+    if (btn) e.preventDefault();
+  });
 
   // Initialize statistics scroll counters
   initStatCounters();
@@ -177,7 +180,7 @@ function initMobileNav() {
 
   // CTA buttons or modal togglers close menu to avoid double-scrolling bugs
   actionButtons.forEach(btn => {
-    if (btn.getAttribute("data-bs-toggle") === "modal" || btn.id === "drawer-cta-book") {
+    if (btn.getAttribute("data-bs-toggle") === "modal" || btn.id === "drawer-cta-book" || btn.classList.contains("popup-form-btn")) {
       btn.addEventListener("click", () => {
         closeMenu();
       });
@@ -488,135 +491,6 @@ function initTestimonialModal() {
   // Clear iframe on modal dismissal to stop sound
   modalElement.addEventListener("hidden.bs.modal", () => {
     videoIframe.src = "";
-  });
-}
-
-/* Consultation multi-step booking form */
-function initConsultationModal() {
-  const formStep1 = document.getElementById("booking-form-step-1");
-  const formStep2 = document.getElementById("booking-form-step-2");
-
-  const step1Panel = document.getElementById("booking-step-1-panel");
-  const step2Panel = document.getElementById("booking-step-2-panel");
-  const successPanel = document.getElementById("booking-success-panel");
-
-  const modalCloseBtn = document.getElementById("consultation-modal-close");
-  const modalEl = document.getElementById("consultationModal");
-
-  // Time slot dynamic selection
-  const timeSlotButtons = document.querySelectorAll(".time-slot-btn");
-  let selectedTime = "";
-
-  timeSlotButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      timeSlotButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      selectedTime = btn.getAttribute("data-time");
-    });
-  });
-
-  // Booking Data store
-  let bookingData = {
-    name: "",
-    phone: "",
-    email: "",
-    service: "",
-    date: "",
-    time: "",
-    notes: ""
-  };
-
-  // Step 1 Submit
-  if (formStep1) {
-    formStep1.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      bookingData.name = document.getElementById("booking-name").value;
-      bookingData.phone = document.getElementById("booking-phone").value;
-      bookingData.email = document.getElementById("booking-email").value;
-      bookingData.service = document.getElementById("booking-service").value;
-
-      if (!bookingData.name || !bookingData.phone || !bookingData.email) {
-        alert("Please complete all fields to proceed.");
-        return;
-      }
-
-      // Transition to Step 2
-      step1Panel.style.display = "none";
-      step2Panel.style.display = "block";
-    });
-  }
-
-  // Step 2 Submit (Final confirm)
-  if (formStep2) {
-    formStep2.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      bookingData.date = document.getElementById("booking-date").value;
-      bookingData.time = selectedTime;
-      bookingData.notes = document.getElementById("booking-notes").value;
-
-      if (!bookingData.date) {
-        alert("Please choose an available appointment date.");
-        return;
-      }
-      if (!bookingData.time) {
-        alert("Please pick an available private suite timeslot.");
-        return;
-      }
-
-      // Populate Success fields
-      document.getElementById("success-summary-name").textContent = bookingData.name;
-      document.getElementById("success-summary-service").textContent = bookingData.service;
-      document.getElementById("success-summary-date").textContent = bookingData.date;
-      document.getElementById("success-summary-time").textContent = bookingData.time;
-
-      // Transition to Success Screen
-      step2Panel.style.display = "none";
-      successPanel.style.display = "block";
-    });
-  }
-
-  // Reset modal when closing/returning
-  const resetBtn = document.getElementById("booking-success-return");
-  function resetBookingForm() {
-    if (formStep1) formStep1.reset();
-    if (formStep2) formStep2.reset();
-    timeSlotButtons.forEach(b => b.classList.remove("active"));
-    selectedTime = "";
-
-    if (step1Panel) step1Panel.style.display = "block";
-    if (step2Panel) step2Panel.style.display = "none";
-    if (successPanel) successPanel.style.display = "none";
-  }
-
-  if (resetBtn) {
-    resetBtn.addEventListener("click", () => {
-      resetBookingForm();
-      // Hide modal via Bootstrap API
-      const bsModal = bootstrap.Modal.getInstance(modalEl);
-      if (bsModal) bsModal.hide();
-    });
-  }
-
-  if (modalEl) {
-    modalEl.addEventListener("hidden.bs.modal", () => {
-      resetBookingForm();
-    });
-  }
-
-  // Handle direct modal booking setup for a selected service card
-  const bookTherapyBtns = document.querySelectorAll(".book-therapy-trigger, .service-card, [data-service]");
-  bookTherapyBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const serviceName = btn.getAttribute("data-service");
-      if (serviceName) {
-        const serviceSelect = document.getElementById("booking-service");
-        if (serviceSelect) {
-          serviceSelect.value = serviceName;
-        }
-      }
-    });
   });
 }
 

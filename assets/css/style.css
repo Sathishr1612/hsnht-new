@@ -2074,30 +2074,6 @@ h6 {
   color: rgba(15, 23, 42, 0.6);
 }
 
-.time-slot-btn {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  background-color: rgba(15, 23, 42, 0.05);
-  color: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(200, 164, 93, 0.15);
-  border-radius: 0;
-  padding: 0.75rem;
-  transition: var(--transition-fast);
-}
-
-.time-slot-btn:hover {
-  border-color: rgba(200, 164, 93, 0.4);
-  color: var(--color-primary);
-}
-
-.time-slot-btn.active {
-  background-color: var(--color-secondary);
-  color: #0F172A;
-  border-color: var(--color-secondary);
-  /* font-weight removed */
-}
-
 /* Mobile responsive menu - Premium Luxury Drawer and Backdrop */
 .mobile-nav-backdrop {
   position: fixed;
@@ -7319,6 +7295,37 @@ a.luxury-service-item {
   color: var(--color-primary);
   margin-bottom: 8px;
   text-transform: uppercase;
+}
+
+/* Plumb5 embedded form — keep injected markup fluid at every width */
+.plumb5-form-wrapper {
+  width: 100%;
+  min-height: 320px;
+  overflow-x: hidden;
+}
+
+.plumb5-form-wrapper #dvPlumb5InPageScript4,
+.plumb5-form-wrapper #dvPlumb5InPageScript4 * {
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+.plumb5-form-wrapper iframe {
+  width: 100% !important;
+  border: 0;
+}
+
+.plumb5-form-wrapper input:not([type="checkbox"]):not([type="radio"]),
+.plumb5-form-wrapper select,
+.plumb5-form-wrapper textarea {
+  width: 100% !important;
+  font-size: 16px; /* prevents iOS zoom on focus */
+}
+
+.plumb5-form-wrapper button,
+.plumb5-form-wrapper input[type="submit"] {
+  max-width: 100%;
+  white-space: normal;
 }
 
 /* Right Side Contact Info Card */
