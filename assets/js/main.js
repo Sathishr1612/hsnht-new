@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Popup form buttons (Plumb5 popup is attached separately): stop href="#" from jumping to top
   document.addEventListener("click", (e) => {
-    const btn = e.target.closest("a.popup-form-btn[href=\"#\"]");
+    const btn = e.target.closest("a[class*=\"popup-form-btn-\"][href=\"#\"]");
     if (btn) e.preventDefault();
   });
 
@@ -93,7 +93,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize Concern Selector
   initConcernSelector();
+
+  // Fit embedded Plumb5 form iframe to its content (avoids cut-off fields on mobile)
+  initPlumb5EmbedAutoHeight();
 });
+
+/* Plumb5 renders embedded forms in a fixed-height, non-scrolling iframe.
+   The iframe is same-origin (no src), so measure its content and resize it. */
+function initPlumb5EmbedAutoHeight() {
+  const host = document.getElementById("dvPlumb5InPageScript4");
+  if (!host) return;
+
+  const fit = () => {
+    const frame = host.querySelector("iframe");
+    if (!frame) return;
+    try {
+      const doc = frame.contentDocument;
+      if (!doc || !doc.body) return;
+      // Plumb5's own height (from the form designer) is the minimum; only grow past it
+      const base = parseInt(frame.getAttribute("height"), 10) || 0;
+      if (!base) return;
+      let contentBottom = 0;
+      doc.body.querySelectorAll("*").forEach((el) => {
+        contentBottom = Math.max(contentBottom, el.getBoundingClientRect().bottom);
+      });
+      const height = Math.max(base, Math.ceil(contentBottom));
+      if (frame.style.height !== height + "px") {
+        frame.style.setProperty("height", height + "px", "important");
+      }
+    } catch (e) {
+      // Cross-origin frame: leave Plumb5's own sizing in place
+    }
+  };
+
+  // Content loads asynchronously and changes with validation messages, so re-check periodically
+  setInterval(fit, 1000);
+  window.addEventListener("resize", fit);
+}
 
 /* Scroll Tracker (Progress Bar, Navbar State, & Scrollspy) */
 function initScrollProgress() {
@@ -180,7 +216,7 @@ function initMobileNav() {
 
   // CTA buttons or modal togglers close menu to avoid double-scrolling bugs
   actionButtons.forEach(btn => {
-    if (btn.getAttribute("data-bs-toggle") === "modal" || btn.id === "drawer-cta-book" || btn.classList.contains("popup-form-btn")) {
+    if (btn.getAttribute("data-bs-toggle") === "modal" || btn.id === "drawer-cta-book" || btn.className.includes("popup-form-btn-")) {
       btn.addEventListener("click", () => {
         closeMenu();
       });

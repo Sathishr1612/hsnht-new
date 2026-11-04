@@ -180,7 +180,7 @@
     });
 
     actionButtons.forEach(function (btn) {
-      if (btn.getAttribute('data-bs-toggle') === 'modal' || btn.id === 'drawer-cta-book' || btn.classList.contains('popup-form-btn')) {
+      if (btn.getAttribute('data-bs-toggle') === 'modal' || btn.id === 'drawer-cta-book' || btn.className.indexOf('popup-form-btn-') !== -1) {
         btn.addEventListener('click', function () {
           closeMenu();
         });

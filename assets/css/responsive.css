@@ -652,11 +652,6 @@
     background-position: center center !important;
   }
 
-  body.about-page .about-hero,
-  body.about-page #about-hero {
-    background-image: url('../images/hsn-hair-5.webp') !important;
-  }
-
   body.vg-page .about-hero,
   body.vg-page #about-hero {
     background-image: url('../images/hsn-images/hsn-hair-restore-videos-mobile.jpg') !important;

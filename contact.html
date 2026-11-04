@@ -222,7 +222,7 @@
 
             <div class="row clinic-cards-row g-4 text-start justify-content-center">
                 <!-- Bangalore Clinic -->
-                <div class="col-md-4" id="bangalore">
+                <div class="col-md-6 col-lg-3" id="bangalore">
                     <div class="clinic-card">
                         <div>
                             <div class="clinic-icon">
@@ -261,7 +261,7 @@
                 </div>
 
                 <!-- Chennai Clinic -->
-                <div class="col-md-4" id="chennai">
+                <div class="col-md-6 col-lg-3" id="chennai">
                     <div class="clinic-card">
                         <div>
                             <div class="clinic-icon">
@@ -301,7 +301,7 @@
                 </div>
 
                 <!-- Coimbatore Clinic -->
-                <div class="col-md-4" id="coimbatore">
+                <div class="col-md-6 col-lg-3" id="coimbatore">
                     <div class="clinic-card">
                         <div>
                             <div class="clinic-icon">
@@ -339,6 +339,45 @@
                     </div>
                 </div>
 
+                <!-- Hyderabad Clinic -->
+                <div class="col-md-6 col-lg-3" id="hyderabad">
+                    <div class="clinic-card">
+                        <div>
+                            <div class="clinic-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <h3 class="clinic-name font-serif">Hyderabad</h3>
+                            <p class="clinic-address font-sans">
+                                HSN Super Speciality<br>
+                                First Floor, Plot No. 8-3-1060/B4<br>
+                                Block B, Commercial Complex<br>
+                                Srinagar Colony, Banjara Hills<br>
+                                Hyderabad, Telangana - 500073
+                            </p>
+                        </div>
+                        <div>
+                            <div class="clinic-details">
+                                <div class="clinic-detail-item">
+                                    <i class="bi bi-telephone clinic-detail-icon"></i>
+                                    <span><strong>Appointment:</strong> +91 90355 54728</span>
+                                </div>
+                                <div class="clinic-detail-item">
+                                    <i class="bi bi-clock clinic-detail-icon"></i>
+                                    <span>Working Days: Tue - Sun<br>Monday Holiday</span>
+                                </div>
+                            </div>
+                            <div class="clinic-actions">
+                                <a href="tel:+919035554728" class="btn btn-gold-outline">
+                                    <i class="bi bi-telephone me-2"></i>CALL NOW
+                                </a>
+                                <a href="https://maps.app.goo.gl/iUyVKYZUJMs2jGqj9?g_st=iw"
+                                    target="_blank" rel="noreferrer" class="btn btn-gold-solid">
+                                    <i class="bi bi-geo-alt me-2"></i>GET DIRECTIONS
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -433,6 +472,33 @@
                     </div>
                 </div>
 
+                <!-- Hyderabad Map Card -->
+                <div class="col-md-6 col-lg-6">
+                    <div class="map-card">
+                        <h4 class="font-serif mb-2" style="font-size: 20px; font-weight: 700;">Hyderabad Hair Centre
+                        </h4>
+                        <p class="text-muted text-xs mb-0 font-sans" style="font-size: 13px; line-height: 1.4;">
+                            Banjara Hills, Hyderabad</p>
+                        <div class="map-iframe-wrapper">
+                            <iframe
+                                src="https://maps.google.com/maps?q=8-3-1060/B4,+Srinagar+Colony,+Banjara+Hills,+Hyderabad,+Telangana+500073&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen=""
+                                loading="lazy"></iframe>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://maps.app.goo.gl/iUyVKYZUJMs2jGqj9?g_st=iw" target="_blank"
+                                rel="noreferrer" class="btn btn-gold-solid py-2 px-2 text-center flex-grow-1 font-sans"
+                                style="font-size: 11px;">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> DIRECTIONS
+                            </a>
+                            <a href="tel:+919035554728"
+                                class="btn btn-gold-outline py-2 px-2 text-center flex-grow-1 font-sans"
+                                style="font-size: 11px;" aria-label="Call Hyderabad Clinic">
+                                <i class="bi bi-telephone me-1"></i> CALL NOW
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -481,8 +547,8 @@
                     <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2"
                         data-bs-parent="#contactFaqAccordion">
                         <div class="accordion-body">
-                            HSN Super Speciality operates advanced facilities in Bangalore, Chennai, and
-                            Coimbatore. We
+                            HSN Super Speciality operates advanced facilities in Bangalore, Chennai, Coimbatore and
+                            Hyderabad. We
                             recommend visiting the location closest to you. All our centers feature identical
                             state-of-the-art diagnostic equipment and offer the same premium standard of medical care.
                         </div>
@@ -551,7 +617,7 @@
                     HSN Super Speciality.
                 </p>
                 <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 align-items-center">
-                    <button class="btn btn-gold-solid py-3 px-5 text-uppercase popup-form-btn">
+                    <button class="btn btn-gold-solid py-3 px-5 text-uppercase popup-form-btn-contact">
                         BOOK CONSULTATION
                     </button>
                     <a href="tel:+919035554728" class="btn btn-gold-outline py-3 px-5 text-uppercase">
@@ -597,6 +663,17 @@
             });
         })();
     </script>
+    <!-- Start of plumb5 Embed Code -->
+    <script type='text/javascript' >
+    (function () {
+    var p5 = document.createElement('script');
+    p5.type = 'text/javascript';
+    p5.src = 'https://src.plumb5.com/hsnht_com.js';
+    var p5s = document.getElementsByTagName('script')[0];
+    p5s.parentNode.insertBefore(p5, p5s);
+    })();
+    </script>
+    <!-- End of plumb5 Embed Code -->
 </body>
 
 </html>
